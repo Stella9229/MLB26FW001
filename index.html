@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>MLB 26FW Marketing Strategy Dashboard Draft</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet"/>
+<style>
+:root{
+  --sand:#A08B6E;--lsand:#C8B89A;--dbeige:#8B7358;--dsand:#7A6548;--brown:#4A3828;--dark:#2E2016;
+  --cream:#F0EBE3;--ivory:#FAF8F5;--lgrey:#EDEBE8;--white:#fff;
+  --t1:#1C1209;--t2:#3C3020;--t3:#7A6B58;--t4:#B8A990;
+  --bdr:rgba(160,139,110,.18);--bdr2:rgba(160,139,110,.38);
+  --green:#2EAA78;--greenbg:#E8F7F1;--amber:#D4882A;--amberbg:#FDF3E3;
+  --red:#C0392B;--redbg:#FDF0EE;
+  --rad:16px;--sh:0 8px 30px rgba(160,139,110,.13);--sh2:0 18px 60px rgba(46,32,22,.20);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Pretendard','Pretendard Variable','Plus Jakarta Sans','Inter',-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--ivory);color:var(--t1);line-height:1.55;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.layout{min-height:100vh;display:flex;flex-direction:column}
+.top-header{position:sticky;top:0;z-index:1000;background:linear-gradient(135deg,var(--dark),var(--brown) 55%,var(--dsand));height:66px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;box-shadow:0 3px 18px rgba(46,32,22,.28)}
+.brand{display:flex;align-items:baseline;gap:12px;color:#fff}.brand h1{font-size:20px;letter-spacing:.08em;font-weight:900}.brand span{font-size:11px;color:var(--lsand);font-weight:700;letter-spacing:.12em;text-transform:uppercase}.ver{font-size:10px;font-weight:900;color:var(--brown);background:linear-gradient(135deg,var(--lsand),var(--sand));border-radius:20px;padding:5px 11px;letter-spacing:.12em}.hdr-pills{display:flex;gap:8px}.pill{border:1px solid rgba(200,184,154,.35);color:var(--lsand);background:rgba(255,255,255,.08);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:800;letter-spacing:.04em}
+.tabbar{position:sticky;top:66px;z-index:999;background:#fff;border-bottom:1px solid var(--bdr);box-shadow:0 6px 18px rgba(160,139,110,.10);display:flex;gap:2px;padding:0 20px;overflow-x:auto}.tabbtn{appearance:none;border:0;background:transparent;padding:15px 16px 14px;display:flex;align-items:center;gap:8px;color:var(--t3);font-size:12px;font-weight:800;white-space:nowrap;cursor:pointer;position:relative}.tabbtn:hover{color:var(--brown)}.tabbtn.active{color:var(--t1)}.tabbtn.active:after{content:'';position:absolute;left:12px;right:12px;bottom:0;height:3px;background:linear-gradient(90deg,var(--sand),var(--lsand));border-radius:3px 3px 0 0}.tabnum{width:22px;height:22px;border-radius:50%;background:var(--cream);border:1px solid var(--bdr2);display:inline-flex;align-items:center;justify-content:center;font-size:10px;color:var(--dsand)}.tabbtn.active .tabnum{background:var(--brown);color:var(--lsand);border-color:var(--brown)}
+.container{max-width:1320px;margin:0 auto;padding:26px 28px 80px}.tab{display:none;animation:fade .25s ease}.tab.active{display:block}@keyframes fade{from{opacity:.5;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hero{background:linear-gradient(150deg,#2E2016 0%,#4A3828 50%,#7A6548 100%);border-radius:24px;position:relative;overflow:hidden;color:#fff;padding:38px 40px 34px;margin-bottom:24px;box-shadow:var(--sh2)}.hero:before{content:'';position:absolute;right:-120px;top:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(200,184,154,.42),transparent 65%)}.hero>*{position:relative;z-index:1}.eyebrow{font-size:10px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--lsand);margin-bottom:10px}.hero h2{font-size:34px;line-height:1.16;letter-spacing:-.03em;font-weight:900;margin-bottom:12px}.hero h2 em{font-style:normal;color:var(--lsand)}.hero .lead{max-width:800px;font-size:14px;color:rgba(240,235,227,.88);font-weight:600;line-height:1.85}.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}.hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:17px 18px;backdrop-filter:blur(6px)}.hc-label{font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--lsand);margin-bottom:7px}.hc-value{font-size:18px;font-weight:900;color:#fff;margin-bottom:3px}.hc-note{font-size:11px;color:rgba(240,235,227,.72);font-weight:600;line-height:1.45}
+.sec{margin:24px 0}.sec-hd{display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--bdr)}.sec-num{width:26px;height:26px;border-radius:50%;background:var(--sand);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0}.sec-title{font-size:16px;font-weight:900;letter-spacing:.02em}.sec-sub{margin-left:auto;font-size:10px;font-weight:800;color:var(--t4);letter-spacing:.12em;text-transform:uppercase}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.card{background:#fff;border:1px solid var(--bdr);border-top:3px solid var(--lsand);border-radius:var(--rad);box-shadow:var(--sh);padding:22px;overflow:hidden}.card.dark{background:linear-gradient(135deg,#2E2016,#4A3828 55%,#6B5035);color:#fff;border-color:rgba(200,184,154,.18)}.card-title{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:900;color:var(--t1);margin-bottom:8px}.card.dark .card-title{color:#fff}.dot{width:8px;height:8px;border-radius:50%;background:var(--sand);flex-shrink:0}.kicker{font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--dsand);margin-bottom:8px}.card.dark .kicker{color:var(--lsand)}.bodytxt{font-size:13px;color:var(--t2);font-weight:600;line-height:1.75}.bodytxt b{color:var(--t1)}.card.dark .bodytxt{color:rgba(240,235,227,.82)}.card.dark .bodytxt b{color:#fff}.tagrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.tag{font-size:10px;font-weight:800;border-radius:999px;padding:5px 10px;border:1px solid var(--bdr2);background:var(--cream);color:var(--dsand)}.card.dark .tag{background:rgba(200,184,154,.12);border-color:rgba(200,184,154,.25);color:var(--lsand)}.mini-note{font-size:11px;color:var(--t3);font-weight:700;margin-top:12px;padding-top:12px;border-top:1px solid var(--bdr)}.card.dark .mini-note{color:rgba(240,235,227,.70);border-top-color:rgba(255,255,255,.12)}
+.media{border-radius:14px;overflow:hidden;border:1px solid var(--bdr);box-shadow:var(--sh);background:#eee;position:relative;min-height:160px}.media.tall{height:340px}.media.mid{height:245px}.media.short{height:180px}.media:after{content:attr(data-label);position:absolute;left:0;right:0;bottom:0;padding:34px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:10px;font-weight:800;letter-spacing:.04em}.img-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.img-grid .media{height:190px}.img-grid.small .media{height:145px}.img-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.img-strip .media{height:128px;border-radius:10px}.formula{display:grid;grid-template-columns:1fr 42px 1fr 42px 1fr;align-items:center;gap:0;margin:18px 0}.fbox{background:#fff;border:1px solid var(--bdr);border-radius:16px;padding:18px;text-align:center;box-shadow:var(--sh)}.fbox .lbl{font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--dsand);margin-bottom:6px}.fbox .val{font-size:20px;font-weight:900;color:var(--t1);line-height:1.15}.op{text-align:center;font-size:26px;font-weight:900;color:var(--t4)}.takeaway{background:linear-gradient(135deg,#2E2016,#4A3828 55%,#7A6548);border-radius:18px;color:#fff;padding:24px 28px;margin-top:24px;box-shadow:var(--sh2)}.takeaway .label{font-size:10px;font-weight:900;letter-spacing:.18em;color:var(--lsand);text-transform:uppercase;margin-bottom:8px}.takeaway h3{font-size:22px;font-weight:900;line-height:1.35;margin-bottom:8px}.takeaway p{font-size:13px;color:rgba(240,235,227,.84);font-weight:600;line-height:1.75}.table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:14px;background:#fff;box-shadow:var(--sh);border:1px solid var(--bdr)}.table th{background:var(--brown);color:var(--lsand);font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:12px;text-align:left}.table td{font-size:12px;font-weight:650;color:var(--t2);padding:13px 12px;border-top:1px solid var(--bdr);vertical-align:top}.timeline{display:grid;grid-template-columns:repeat(9,1fr);gap:8px}.tl{background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:13px 10px;min-height:112px;position:relative;box-shadow:var(--sh)}.tl:before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--lsand);border-radius:14px 14px 0 0}.tl .date{font-size:10px;font-weight:900;color:var(--dsand);margin-bottom:5px}.tl .title{font-size:12px;font-weight:900;color:var(--t1);line-height:1.35;margin-bottom:5px}.tl .talent{font-size:10px;font-weight:800;color:var(--t3)}.split{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;align-items:start}.mood-collage{display:grid;grid-template-columns:1.3fr .7fr;gap:10px}.mood-collage .media:first-child{height:398px}.mood-collage .side{display:grid;gap:10px}.mood-collage .side .media{height:194px}.quote{font-size:24px;font-weight:900;letter-spacing:-.04em;line-height:1.32;color:var(--t1);margin-bottom:14px}.quote em{font-style:normal;color:var(--dsand)}.role-card{display:grid;grid-template-columns:100px 1fr;gap:14px;align-items:center}.avatar{width:100px;height:120px;border-radius:14px;overflow:hidden;border:1px solid var(--bdr);background:#eee}.source{font-size:10px;color:var(--t4);font-weight:700;margin-top:28px;text-align:center}.warning{background:var(--amberbg);border:1px solid rgba(212,136,42,.35);color:#7A4E16;border-radius:12px;padding:10px 12px;font-size:11px;font-weight:800;margin-top:10px}
+@media(max-width:1100px){.hero-grid,.grid-4,.grid-5{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:1fr}.split,.mood-collage{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(3,1fr)}.img-grid{grid-template-columns:repeat(2,1fr)}.img-strip{grid-template-columns:repeat(3,1fr)}.formula{grid-template-columns:1fr}.op{padding:8px}.hdr-pills{display:none}}
+@media(max-width:640px){.container{padding:18px 16px 60px}.top-header{padding:0 16px}.brand h1{font-size:15px}.hero{padding:28px 22px}.hero h2{font-size:26px}.hero-grid,.grid-2,.grid-4,.grid-5{grid-template-columns:1fr}.timeline{grid-template-columns:1fr}.media.tall,.mood-collage .media:first-child{height:300px}.tabbar{top:66px;padding:0 8px}}
+
+/* FEEDBACK PATCH V2 — Korean tab titles + centered dashboard + season review board */
+.tab{text-align:center}.hero{text-align:center}.hero .lead{margin-left:auto;margin-right:auto}.sec-hd{justify-content:center}.sec-sub{margin-left:0}.card{text-align:center}.card-title{justify-content:center}.tagrow{justify-content:center}.mini-note{text-align:center}.bodytxt{text-align:center}.table th,.table td{text-align:center}.takeaway{text-align:center}.role-card{grid-template-columns:1fr;justify-items:center}.avatar{margin:0 auto}.timeline .tl{text-align:center}
+.season-board{background:#fff;border:1px solid var(--bdr);border-radius:20px;padding:18px;box-shadow:var(--sh);overflow:hidden}.season-head{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:8px}.season-head div{background:#dedede;color:#111;border-radius:0;padding:8px 10px;font-size:18px;font-weight:800;letter-spacing:.03em}.season-head .fw{grid-column:1/3}.season-head .ss{grid-column:3/6}.lifestyle-band{border:2px solid #ff4b4b;color:#ff4b4b;border-radius:999px;padding:7px 14px;margin:6px 0 10px;font-size:20px;font-weight:900;letter-spacing:.02em}.season-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.season-col{border:1px solid #e8e1d6;background:#fff;display:flex;flex-direction:column;min-height:460px}.season-col .theme{background:#fde8e8;color:#ff4b4b;padding:9px 6px;font-size:15px;font-weight:900}.prod-box{height:138px;background:#fff;border-bottom:1px solid #e8e1d6;display:grid;grid-template-columns:repeat(2,1fr);gap:4px;padding:8px}.prod-box.one{grid-template-columns:1fr}.prod-box img{object-fit:contain;background:#fff}.hero-box{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;height:245px;padding:6px}.hero-box.one{grid-template-columns:1fr}.hero-box img{object-fit:cover}.action-box{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid #e8e1d6;margin-top:auto}.action-box.one{grid-template-columns:1fr}.act{padding:12px 8px;min-height:86px;border-right:1px solid #e8e1d6}.act:last-child{border-right:0}.act b{display:block;font-size:13px;color:#111;margin-bottom:5px}.act span{display:block;font-size:11px;color:#ff4b4b;font-weight:800;line-height:1.45}.learning-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.learning-card{background:#fff;border:1px solid var(--bdr);border-top:3px solid var(--lsand);border-radius:16px;padding:22px 18px;box-shadow:var(--sh)}.learning-card .num{font-size:10px;font-weight:900;color:var(--dsand);letter-spacing:.12em;margin-bottom:8px}.learning-card h4{font-size:18px;font-weight:900;margin-bottom:8px;color:var(--t1)}.learning-card p{font-size:12px;font-weight:700;color:var(--t2);line-height:1.7}.learning-card.dark{background:linear-gradient(135deg,#2E2016,#4A3828 55%,#6B5035);color:#fff}.learning-card.dark h4{color:#fff}.learning-card.dark p{color:rgba(240,235,227,.82)}
+@media(max-width:1100px){.season-grid,.season-head{grid-template-columns:1fr}.season-head .fw,.season-head .ss{grid-column:auto}.learning-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.learning-grid{grid-template-columns:1fr}.lifestyle-band{font-size:15px}.season-col{min-height:auto}}
+
+
+/* V3 TAB1 REDESIGN — season split / executive centered layout */
+#tab1 .hero{text-align:center;padding:42px 44px 38px;}
+#tab1 .hero .lead{margin:0 auto;max-width:860px;text-align:center;}
+#tab1 .hero-grid{max-width:1120px;margin:30px auto 0;}
+#tab1 .hero-card{text-align:center;}
+#tab1 .sec-hd{justify-content:center;text-align:center;}
+#tab1 .sec-sub{margin-left:0;}
+.season-split-v3{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch;}
+.season-panel-v3{background:#fff;border:1px solid var(--bdr);border-radius:22px;box-shadow:var(--sh);overflow:hidden;position:relative;}
+.season-panel-v3:before{content:'';position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--sand),var(--lsand));}
+.season-panel-v3 .season-top{padding:24px 26px 18px;text-align:center;background:linear-gradient(180deg,#fff,var(--ivory));border-bottom:1px solid var(--bdr);}
+.season-panel-v3 .season-label{display:inline-flex;align-items:center;justify-content:center;min-width:92px;padding:7px 16px;border-radius:999px;background:var(--brown);color:var(--lsand);font-size:12px;font-weight:900;letter-spacing:.12em;margin-bottom:12px;}
+.season-panel-v3 .season-title{font-size:24px;font-weight:900;letter-spacing:-.03em;color:var(--t1);line-height:1.25;margin-bottom:8px;}
+.season-panel-v3 .season-desc{font-size:13px;font-weight:700;color:var(--t2);line-height:1.65;max-width:520px;margin:0 auto;}
+.focus-list-v3{display:grid;gap:14px;padding:18px;}
+.focus-card-v3{display:grid;grid-template-columns:42% 1fr;gap:16px;align-items:stretch;background:var(--ivory);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;text-align:left;}
+.focus-card-v3 .visual{min-height:215px;background:#eee;overflow:hidden;}
+.focus-card-v3 .visual img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.focus-card-v3 .copy{padding:18px 18px 16px;display:flex;flex-direction:column;justify-content:center;}
+.focus-card-v3 .theme-chip{align-self:flex-start;border:1px solid var(--bdr2);background:#fff;color:var(--dsand);font-size:10px;font-weight:900;letter-spacing:.12em;border-radius:999px;padding:5px 10px;margin-bottom:10px;}
+.focus-card-v3 h4{font-size:18px;font-weight:900;color:var(--t1);line-height:1.3;margin-bottom:8px;}
+.focus-card-v3 .focus{font-size:12px;font-weight:800;color:var(--t2);line-height:1.6;margin-bottom:12px;}
+.focus-card-v3 .acts{display:grid;gap:7px;}
+.focus-card-v3 .actline{font-size:12px;font-weight:800;color:var(--t3);line-height:1.45;position:relative;padding-left:12px;}
+.focus-card-v3 .actline:before{content:'';position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--sand);}
+.learning-grid-v3{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.learning-grid-v3 .learning-card{text-align:center;min-height:180px;display:flex;flex-direction:column;justify-content:center;}
+#tab1 .takeaway{text-align:center;}
+#tab1 .takeaway p{max-width:900px;margin:0 auto;}
+@media(max-width:1050px){.season-split-v3{grid-template-columns:1fr}.learning-grid-v3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.focus-card-v3{grid-template-columns:1fr}.focus-card-v3 .visual{height:260px}.learning-grid-v3{grid-template-columns:1fr}}
+
+
+/* V4 TAB1 RESTRUCTURE — key visual only + item icon strip + keyword block */
+.focus-card-v3{grid-template-columns:46% 1fr;background:#fff;border-radius:20px;text-align:center;box-shadow:0 4px 18px rgba(160,139,110,.10);}
+.focus-card-v3 .visual{min-height:260px;background:#f7f3ee;border-right:1px solid var(--bdr);}
+.focus-card-v3 .visual img{object-fit:cover;object-position:center top;}
+.focus-card-v3 .copy{padding:18px 20px 18px;justify-content:center;align-items:center;text-align:center;background:linear-gradient(180deg,#fff,var(--ivory));}
+.item-icons{width:100%;max-width:260px;height:58px;background:#fff;border:1px solid var(--bdr);border-radius:14px;padding:7px 10px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(160,139,110,.08);}
+.item-icons img{width:100%;height:100%;object-fit:contain;object-position:center;background:#fff;}
+.keyword-block{width:100%;border:1px solid var(--bdr);border-top:3px solid var(--lsand);border-radius:16px;background:#fff;padding:16px 15px 14px;box-shadow:0 2px 12px rgba(160,139,110,.08);}
+.focus-card-v3 .theme-chip{align-self:center;margin:0 auto 10px;background:var(--cream);}
+.focus-card-v3 h4{font-size:17px;margin-bottom:8px;}
+.focus-card-v3 .focus{font-size:12px;margin-bottom:12px;}
+.focus-card-v3 .acts{gap:6px;}
+.focus-card-v3 .actline{text-align:center;padding-left:0;font-size:11.5px;}
+.focus-card-v3 .actline:before{display:none;}
+@media(max-width:720px){.focus-card-v3 .visual{height:300px;border-right:0;border-bottom:1px solid var(--bdr)}.item-icons{max-width:300px;height:64px}}
+
+
+
+/* V5 REQUEST PATCH — tab1 index_v3 structure + current dashboard tone */
+#tab1 .hero{background:linear-gradient(150deg,#2E2016 0%,#4A3828 52%,#7A6548 100%) !important;color:#fff;text-align:center;}
+#tab1 .hero .lead{margin:0 auto;max-width:880px;text-align:center;}
+#tab1 .hero-grid{grid-template-columns:repeat(4,1fr);max-width:1120px;margin:30px auto 0;}
+#tab1 .hero-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);text-align:center;box-shadow:none;}
+#tab1 .hc-label{color:var(--lsand);}
+#tab1 .hc-value{color:#fff;}
+#tab1 .hc-note{color:rgba(240,235,227,.72);}
+#tab1 .sec-hd{justify-content:center;text-align:center;}
+#tab1 .sec-sub{margin-left:0;}
+#tab1 .season-panel-v3{background:#fff;border:1px solid var(--bdr);border-radius:24px;box-shadow:0 8px 30px rgba(160,139,110,.13);overflow:hidden;}
+#tab1 .season-panel-v3:before{height:4px;background:linear-gradient(90deg,var(--sand),var(--lsand));}
+#tab1 .season-panel-v3 .season-top{background:linear-gradient(180deg,#fff 0%,#FAF8F5 100%);border-bottom:1px solid var(--bdr);}
+#tab1 .season-panel-v3 .season-label{background:var(--brown);color:var(--lsand);}
+#tab1 .season-panel-v3 .season-title{color:var(--t1);}
+#tab1 .focus-card-v3{grid-template-columns:44% 1fr;background:#fff;border:1px solid var(--bdr);border-radius:20px;box-shadow:0 4px 18px rgba(160,139,110,.10);text-align:center;}
+#tab1 .focus-card-v3 .visual{min-height:255px;background:#F5F0E8;border-right:1px solid var(--bdr);}
+#tab1 .focus-card-v3 .copy{padding:20px 20px 18px;justify-content:center;align-items:center;text-align:center;background:linear-gradient(180deg,#fff,var(--ivory));}
+#tab1 .focus-card-v3 .theme-chip{align-self:center;margin:0 auto 10px;background:var(--cream);border:1px solid var(--bdr2);color:var(--dsand);}
+#tab1 .focus-card-v3 h4{font-size:18px;letter-spacing:-.02em;color:var(--t1);}
+#tab1 .focus-card-v3 .focus{font-size:12.5px;color:var(--t2);}
+#tab1 .focus-card-v3 .actline{text-align:center;padding-left:0;color:var(--t3);font-size:11.5px;}
+#tab1 .focus-card-v3 .actline:before{display:none;}
+#tab1 .learning-grid-v3 .learning-card{background:#fff;border-top:3px solid var(--lsand);box-shadow:0 8px 30px rgba(160,139,110,.10);}
+#tab1 .learning-grid-v3 .learning-card.dark{background:linear-gradient(135deg,#2E2016,#4A3828 55%,#6B5035);}
+.insight-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.insight-card{background:#fff;border:1px solid var(--bdr);border-radius:18px;box-shadow:0 8px 30px rgba(160,139,110,.10);overflow:hidden;display:flex;flex-direction:column;text-align:left;}
+.insight-card .keep{padding:16px 16px 14px;border-bottom:1px dashed var(--bdr2);}
+.insight-card .tagline{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:900;letter-spacing:.1em;padding:4px 9px;border-radius:999px;margin-bottom:8px;}
+.insight-card .tagline.good{background:var(--greenbg);color:var(--green);}
+.insight-card .tagline.imp{background:var(--amberbg);color:var(--amber);}
+.insight-card .keep h4{font-size:14px;font-weight:900;color:var(--t1);margin-bottom:5px;line-height:1.35;}
+.insight-card .keep p{font-size:11.5px;font-weight:700;color:var(--t3);line-height:1.6;}
+.insight-card .arrow{text-align:center;font-size:15px;color:var(--sand);font-weight:900;padding:6px 0 2px;}
+.insight-card .next{padding:6px 16px 18px;margin-top:auto;}
+.insight-card .next .lbl{font-size:9px;font-weight:900;letter-spacing:.14em;color:var(--dsand);margin-bottom:6px;}
+.insight-card .next p{font-size:12px;font-weight:800;color:var(--t1);line-height:1.6;}
+.insight-card .next p b{color:var(--brown);}
+.insight-card.lead-card{background:linear-gradient(150deg,#2E2016,#4A3828 55%,#7A6548);color:#fff;border:0;}
+.insight-card.lead-card .keep{border-bottom-color:rgba(255,255,255,.18);}
+.insight-card.lead-card .tagline.imp{background:rgba(212,136,42,.22);color:#F2C078;}
+.insight-card.lead-card .keep h4,.insight-card.lead-card .next p{color:#fff;}
+.insight-card.lead-card .keep p{color:rgba(240,235,227,.78);}
+.insight-card.lead-card .next .lbl{color:var(--lsand);}
+.insight-card.lead-card .next p b{color:var(--lsand);}
+.insight-card.lead-card .arrow{color:var(--lsand);}
+@media(max-width:1050px){.insight-flow{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.insight-flow{grid-template-columns:1fr}}
+.insight-brief{background:#fff;border:1px solid var(--bdr);border-radius:16px;box-shadow:var(--sh);padding:20px 24px;text-align:left;max-width:980px;margin:0 auto;}
+.insight-brief .line{font-size:13.5px;font-weight:700;color:var(--t2);line-height:1.7;padding:7px 0;border-bottom:1px solid var(--bdr);}
+.insight-brief .line:last-child{border-bottom:0;}
+.insight-brief .line b{color:var(--t1);font-weight:900;}
+.insight-brief .line.imp b{color:var(--amber);}
+.insight-brief .line .to{color:var(--dsand);font-weight:900;margin:0 6px;}
+#tab1 .takeaway{text-align:center;background:linear-gradient(135deg,#2E2016,#4A3828 55%,#7A6548);}
+#tab1 .takeaway p{max-width:900px;margin:0 auto;}
+#tab2 .hero-grid{grid-template-columns:repeat(3,1fr);max-width:980px;margin-left:auto;margin-right:auto;}
+#tab2 .hero-card{text-align:center;}
+#tab2 .hc-value{font-size:20px;}
+@media(max-width:1050px){#tab2 .hero-grid{grid-template-columns:1fr}.season-split-v3{grid-template-columns:1fr}}
+@media(max-width:720px){#tab1 .hero-grid{grid-template-columns:1fr}#tab1 .focus-card-v3{grid-template-columns:1fr}#tab1 .focus-card-v3 .visual{height:300px;border-right:0;border-bottom:1px solid var(--bdr)}}
+
+
+/* V6 PATCH — exact uploaded TAB1 content + current dashboard color system */
+#tab1 .season-panel-v3{background:#fff;border-color:var(--bdr);box-shadow:var(--sh);}
+#tab1 .season-top{background:linear-gradient(180deg,#fff 0%,var(--ivory) 100%) !important;}
+#tab1 .season-label{background:linear-gradient(135deg,var(--dark),var(--brown));color:var(--lsand);}
+#tab1 .focus-card-v3{background:#fff;border-color:var(--bdr);box-shadow:0 4px 18px rgba(160,139,110,.10);}
+#tab1 .focus-card-v3 .theme-chip{background:var(--cream);border-color:var(--bdr2);color:var(--dsand);}
+#tab1 .focus-card-v3 .actline:before{background:var(--sand);}
+#tab1 .learning-card{background:#fff;border-color:var(--bdr);border-top-color:var(--lsand);}
+#tab1 .learning-card.dark{background:linear-gradient(135deg,#2E2016,#4A3828 55%,#6B5035);}
+#tab2 .hero-grid{grid-template-columns:repeat(3,1fr);max-width:960px;margin-left:auto;margin-right:auto;}
+#tab2 .hero-card{text-align:center;}
+#tab2 .hc-value{font-size:19px;line-height:1.25;}
+@media(max-width:900px){#tab2 .hero-grid{grid-template-columns:1fr;}}
+
+
+/* V7 PATCH — integrated season board + key styling + merged tab */
+#tab1 .season-panorama{background:#fff;border:1px solid var(--bdr);border-radius:24px;box-shadow:var(--sh);padding:20px;overflow:hidden;position:relative;}
+#tab1 .season-panorama:before{content:'';position:absolute;left:20px;right:20px;top:0;height:4px;background:linear-gradient(90deg,var(--sand),var(--lsand),var(--dbeige));border-radius:0 0 4px 4px;}
+.season-axis{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:10px;}
+.season-axis .period{border-radius:14px;background:linear-gradient(135deg,var(--dark),var(--brown));color:#fff;padding:12px 14px;font-size:18px;font-weight:900;letter-spacing:.04em;box-shadow:0 8px 24px rgba(46,32,22,.12);}
+.season-axis .period.fw{grid-column:1/3}.season-axis .period.ss{grid-column:3/6}
+.lifestyle-ribbon{display:flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--bdr2);background:linear-gradient(90deg,#fff,var(--cream),#fff);border-radius:999px;padding:12px 20px;margin:8px 0 16px;color:var(--brown);font-size:20px;font-weight:900;letter-spacing:.02em;}
+.lifestyle-ribbon:before,.lifestyle-ribbon:after{content:'';width:34px;height:1px;background:var(--bdr2);}
+.season-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:stretch;}
+.flow-card{background:var(--ivory);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-height:420px;box-shadow:0 4px 16px rgba(160,139,110,.08);position:relative;}
+.flow-card:before{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:var(--lsand);}
+.flow-card.fw:before{background:linear-gradient(90deg,var(--brown),var(--sand));}.flow-card.ss:before{background:linear-gradient(90deg,var(--sand),var(--lsand));}
+.flow-head{padding:18px 16px 14px;text-align:center;border-bottom:1px solid var(--bdr);background:#fff;}
+.flow-season{display:inline-flex;border-radius:999px;background:var(--brown);color:var(--lsand);font-size:9px;font-weight:900;letter-spacing:.14em;padding:5px 10px;margin-bottom:8px;}
+.flow-card.ss .flow-season{background:var(--cream);color:var(--dsand);border:1px solid var(--bdr2);}
+.flow-theme{font-size:15px;font-weight:900;color:var(--brown);letter-spacing:.06em;line-height:1.25;margin-bottom:4px;}
+.flow-focus{font-size:11px;font-weight:800;color:var(--t3);margin-top:6px;line-height:1.45;min-height:32px;}
+.flow-visual{height:210px;background:#eee;border-bottom:1px solid var(--bdr);}
+.flow-visual img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.flow-media{border-bottom:1px solid var(--bdr);}
+.flow-media .items{height:128px;background:#fff;border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;padding:4px;}
+.flow-media .items img{max-width:96%;max-height:96%;width:auto;height:auto;object-fit:contain;transform:scale(1.12);transform-origin:center;}
+.flow-media .key{height:300px;background:#fff;display:block;line-height:0;font-size:0;overflow:hidden;}
+.flow-media .key img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 18%;}
+.flow-media .key.two{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;height:300px;}
+.flow-media .key.two img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 12%;}
+.flow-actions{padding:14px 14px 16px;display:grid;gap:8px;margin-top:auto;}
+.flow-action{background:#fff;border:1px solid var(--bdr);border-radius:12px;padding:10px 10px;text-align:center;}
+.flow-action b{display:block;font-size:12px;color:var(--t1);font-weight:900;margin-bottom:4px;}
+.flow-action span{display:block;font-size:10px;color:var(--dsand);font-weight:800;line-height:1.4;}
+#tab2 .hero-grid{grid-template-columns:repeat(3,1fr);max-width:960px;margin-left:auto;margin-right:auto;}
+#tab3 .hero-grid{grid-template-columns:repeat(4,1fr);}
+.key-styling-board{background:#fff;border:1px solid var(--bdr);border-radius:22px;box-shadow:var(--sh);padding:20px;overflow:hidden;}
+.style-season-axis{display:grid;grid-template-columns:1fr 1.4fr 2.2fr;gap:10px;margin-bottom:10px;}
+.style-season-axis div{background:linear-gradient(135deg,#fff,var(--cream));border:1px solid var(--bdr);border-radius:14px;padding:10px 12px;font-size:13px;font-weight:900;color:var(--brown);letter-spacing:.08em;text-align:center;}
+.style-grid{display:grid;grid-template-columns:1fr 1.4fr 1.25fr 1.35fr;gap:12px;}
+.style-col{background:var(--ivory);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;box-shadow:0 4px 16px rgba(160,139,110,.08);display:flex;flex-direction:column;}
+.style-month{background:linear-gradient(135deg,var(--dark),var(--brown));color:#fff;text-align:center;padding:12px 10px;font-size:16px;font-weight:900;}
+.style-palette{display:flex;justify-content:center;gap:8px;padding:16px 10px;background:#fff;border-bottom:1px solid var(--bdr);}
+.sw{width:28px;height:28px;border-radius:50%;border:1px solid rgba(0,0,0,.06);box-shadow:0 2px 8px rgba(0,0,0,.08);}
+.style-products{height:110px;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px;background:#fff;border-bottom:1px solid var(--bdr);}
+.style-products.one{grid-template-columns:1fr}.style-products.three{grid-template-columns:1fr 1fr 1fr;}
+.style-products img{width:100%;height:100%;object-fit:contain;background:#fff;border-radius:10px;}
+.style-tags{display:flex;justify-content:center;gap:8px;padding:14px 12px 4px;flex-wrap:wrap;}
+.style-pill{min-width:92px;border-radius:999px;padding:6px 14px;font-size:11px;font-weight:900;color:#fff;background:var(--sand);text-align:center;}
+.style-pill.sub{background:#A9A9A9;}
+.style-main{height:330px;padding:12px 14px 18px;display:flex;align-items:center;justify-content:center;}
+.style-main img{width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 10px 18px rgba(46,32,22,.10));}
+#tab3 .creative-divider{margin-top:26px;}
+#tab4 .hero-grid{grid-template-columns:repeat(4,1fr);}
+@media(max-width:1100px){.season-flow,.season-axis{grid-template-columns:1fr}.season-axis .period.fw,.season-axis .period.ss{grid-column:auto}.style-season-axis,.style-grid{grid-template-columns:1fr}.style-main{height:300px}.lifestyle-ribbon{font-size:15px}.lifestyle-ribbon:before,.lifestyle-ribbon:after{display:none}}
+@media(max-width:760px){#tab3 .hero-grid,#tab4 .hero-grid{grid-template-columns:1fr}.flow-card{min-height:auto}.flow-visual{height:240px}.style-products{height:90px}}
+
+/* TAB5 — CELEB STRATEGY */
+#tab5 .hero{text-align:center;}
+#tab5 .hero .lead{margin:0 auto;}
+.ai-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(200,184,154,.16);border:1px solid rgba(200,184,154,.4);color:var(--lsand);font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:7px 14px;margin-bottom:14px;}
+.ai-badge .blink{width:7px;height:7px;border-radius:50%;background:#7CE3B0;box-shadow:0 0 0 0 rgba(124,227,176,.6);animation:pulse 1.8s infinite;}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(124,227,176,.55)}70%{box-shadow:0 0 0 8px rgba(124,227,176,0)}100%{box-shadow:0 0 0 0 rgba(124,227,176,0)}}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.why-card{background:#fff;border:1px solid var(--bdr);border-top:3px solid var(--lsand);border-radius:18px;box-shadow:var(--sh);padding:24px 24px 22px;text-align:left;position:relative;overflow:hidden;}
+.why-card .why-no{font-size:10px;font-weight:900;letter-spacing:.16em;color:var(--dsand);margin-bottom:10px;}
+.why-card h4{font-size:19px;font-weight:900;color:var(--t1);line-height:1.32;margin-bottom:10px;letter-spacing:-.01em;}
+.why-card h4 em{font-style:normal;color:var(--sand);}
+.why-card .desc{font-size:13px;font-weight:700;color:var(--t2);line-height:1.75;margin-bottom:16px;}
+.why-card .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;}
+.stat-chip{background:var(--ivory);border:1px solid var(--bdr);border-radius:12px;padding:12px 12px;text-align:center;}
+.stat-chip .num{font-size:22px;font-weight:900;color:var(--brown);line-height:1.1;letter-spacing:-.02em;}
+.stat-chip .lbl{font-size:10px;font-weight:800;color:var(--t3);margin-top:5px;line-height:1.4;}
+.why-card .ai-note{font-size:11.5px;font-weight:800;color:var(--dsand);background:var(--greenbg);border:1px solid rgba(46,170,120,.25);border-radius:10px;padding:9px 12px;line-height:1.55;}
+.why-card .ai-note b{color:var(--green);}
+/* mini bar viz */
+.barviz{display:flex;align-items:flex-end;gap:10px;height:104px;margin:14px 0 16px;padding:0 2px;}
+.barviz .bar{flex:1;border-radius:7px 7px 0 0;background:linear-gradient(180deg,var(--lsand),var(--cream));position:relative;display:flex;align-items:flex-end;justify-content:center;padding-bottom:8px;}
+.barviz .bar.hi{background:linear-gradient(180deg,var(--brown),var(--dsand));}
+.barviz .bar span{position:absolute;top:-19px;font-size:12px;font-weight:900;color:var(--t1);}
+.barviz .bar small{font-size:9.5px;font-weight:800;color:rgba(255,255,255,.95);}
+.barviz .bar:not(.hi) small{color:var(--t3);}
+/* donut */
+.donut-wrap{display:flex;align-items:center;gap:18px;margin:4px 0 14px;}
+.donut{width:96px;height:96px;border-radius:50%;flex-shrink:0;background:conic-gradient(var(--brown) 0 75%,var(--cream) 75% 100%);display:flex;align-items:center;justify-content:center;position:relative;}
+.donut:after{content:'';position:absolute;width:62px;height:62px;border-radius:50%;background:#fff;}
+.donut .center{position:relative;z-index:1;text-align:center;}
+.donut .center b{font-size:19px;font-weight:900;color:var(--brown);display:block;line-height:1;}
+.donut .center span{font-size:8px;font-weight:800;color:var(--t3);}
+.donut-legend{font-size:11.5px;font-weight:700;color:var(--t2);line-height:1.7;text-align:left;}
+.donut-legend .k{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px;vertical-align:middle;}
+/* horizontal validity bars (WHY01) */
+.vbar-list{display:grid;gap:11px;margin:6px 0 16px;}
+.vbar-row{display:grid;grid-template-columns:84px 1fr 56px;align-items:center;gap:10px;}
+.vbar-lbl{font-size:11.5px;font-weight:800;color:var(--t2);text-align:left;}
+.vbar-track{height:14px;border-radius:999px;background:var(--cream);overflow:hidden;}
+.vbar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--dsand),var(--sand));}
+.vbar-val{font-size:10px;font-weight:900;color:var(--brown);text-align:right;}
+.barviz-cap{font-size:10.5px;font-weight:700;color:var(--t3);text-align:center;margin:-6px 0 14px;}
+/* celeb gallery */
+.celeb-rank-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;}
+.celeb-card{background:#fff;border:1px solid var(--bdr);border-radius:18px;overflow:hidden;box-shadow:var(--sh);display:flex;flex-direction:column;text-align:left;position:relative;}
+.celeb-card .rank-tag{position:absolute;top:12px;left:12px;z-index:2;background:var(--brown);color:#fff;font-size:11px;font-weight:900;letter-spacing:.04em;border-radius:999px;padding:5px 12px;box-shadow:0 4px 14px rgba(46,32,22,.3);}
+.celeb-card .rank-tag.gold{background:linear-gradient(135deg,#C9A24B,#E7CC82);color:#3A2C0C;}
+.celeb-photo{width:100%;aspect-ratio:3/4;background:#eee;overflow:hidden;}
+.celeb-photo img{width:100%;height:100%;object-fit:cover;object-position:center 40%;}
+.celeb-meta{padding:14px 16px 16px;}
+.celeb-meta .nm{font-size:16px;font-weight:900;color:var(--t1);line-height:1.25;}
+.celeb-meta .han{font-size:11px;font-weight:800;color:var(--dsand);margin:3px 0 8px;}
+.celeb-meta .fol{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:900;color:#fff;background:linear-gradient(135deg,var(--sand),var(--dbeige));border-radius:999px;padding:4px 10px;margin-bottom:9px;}
+.celeb-meta .pt{font-size:11.5px;font-weight:700;color:var(--t2);line-height:1.6;}
+.celeb-meta .pt b{color:var(--brown);}
+.celeb-sub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.celeb-sub{background:#fff;border:1px solid var(--bdr);border-radius:16px;overflow:hidden;box-shadow:var(--sh);text-align:left;}
+.celeb-sub .celeb-photo{aspect-ratio:4/5;}
+.celeb-sub .celeb-photo img{object-position:center 32%;}
+.celeb-sub .celeb-meta{padding:12px 13px 13px;}
+.celeb-sub .nm{font-size:13.5px;}
+.celeb-sub .han{font-size:10px;margin:2px 0 6px;}
+.celeb-sub .fol{font-size:10px;padding:3px 8px;margin-bottom:6px;}
+.celeb-sub .pt{font-size:10.5px;line-height:1.5;}
+.rank-divider{display:flex;align-items:center;gap:12px;margin:6px 0 14px;}
+.rank-divider span{font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--dsand);white-space:nowrap;}
+.rank-divider:before,.rank-divider:after{content:'';height:1px;flex:1;background:var(--bdr2);}
+#tab5 .hero-grid{grid-template-columns:repeat(3,1fr);}
+@media(max-width:1050px){.why-grid{grid-template-columns:1fr}.celeb-rank-bar{grid-template-columns:1fr}.celeb-sub-grid{grid-template-columns:repeat(2,1fr)}#tab5 .hero-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.celeb-sub-grid{grid-template-columns:1fr}.why-card .stat-row{grid-template-columns:1fr}#tab5 .hero-grid{grid-template-columns:1fr}}
+
+/* TAB1 — review split + learning */
+.hero-card.imp{background:rgba(212,136,42,.16);border-color:rgba(212,136,42,.42);}
+.hero-card.imp .hc-label{color:#F2C078;}
+#tab1 .hero-grid{grid-template-columns:repeat(4,1fr);max-width:1080px;margin-left:auto;margin-right:auto;justify-content:center;}
+.review-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.review-block{background:#fff;border:1px solid var(--bdr);border-radius:18px;box-shadow:var(--sh);padding:16px;}
+.rev-cap{font-size:13px;font-weight:900;color:var(--brown);letter-spacing:.04em;text-align:center;background:var(--ivory);border-radius:10px;padding:9px;margin-bottom:14px;}
+.rev-sub + .rev-sub{margin-top:16px;}
+.rev-grid.one{grid-template-columns:1fr;}
+.rev-grid.one .rev-fig{aspect-ratio:auto;height:300px;}
+.rev-grid.one .rev-fig img{object-position:center 12%;}
+.rev-grid.one .rev-fig.hero-style img{transform:scale(1.12); transform-origin:center 20%;}
+.rev-grid.one .rev-fig.festival-hero-fill{
+  height:360px;
+  background:#fff;
+}
+.rev-grid.one .rev-fig.festival-hero-fill img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  transform:scale(1.14);
+  transform-origin:center center;
+}
+
+.rev-grid{display:grid;gap:12px;}
+.rev-grid.two{grid-template-columns:1fr 1fr;}
+.rev-grid.two .rev-fig.wide{grid-column:1 / -1;}
+.rev-grid.three{grid-template-columns:repeat(3,1fr);}
+.rev-grid.fest{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;}
+.rev-grid.fest .rev-fig.vid{grid-row:1 / -1;aspect-ratio:auto;}
+.rev-grid.fest .rev-fig{aspect-ratio:4/3;}
+.rev-grid.fest2{grid-template-columns:1fr 1fr;gap:12px;}
+.rev-grid.fest2 .rev-fig{aspect-ratio:3/4;}
+.rev-grid.fest2 .rev-fig.hero{grid-column:1 / -1;aspect-ratio:auto;height:380px;background:transparent;position:relative;}
+.rev-grid.fest2 .rev-fig.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;}
+.rev-fig{margin:0;border-radius:12px;overflow:hidden;background:#1a1a1a;position:relative;aspect-ratio:3/4;}
+.rev-grid.two .rev-fig.wide{aspect-ratio:16/9;}
+.rev-fig img,.rev-fig video{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block;}
+.rev-fig figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:11px;font-weight:800;text-align:center;padding:18px 8px 8px;}
+/* === 26SS SEASON REVIEW BOARD (PPT layout) — GOOD POINT only === */
+.srv-board{display:block;text-align:left;}
+.srv-side{background:#fff;border:1px solid var(--bdr);border-radius:18px;box-shadow:var(--sh);padding:18px;display:flex;flex-direction:column;}
+.srv-band{text-align:center;font-size:15px;font-weight:900;letter-spacing:.06em;border-radius:10px;padding:11px;margin-bottom:14px;}
+.srv-band.good{background:var(--redbg);color:#ff4b4b;border:1px solid rgba(255,75,75,.3);}
+.srv-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;flex:1;}
+.srv-col{display:flex;flex-direction:column;}
+.srv-coltitle{background:#1c1c1c;color:#fff;font-size:14px;font-weight:900;letter-spacing:.02em;text-align:center;padding:10px 8px;border-radius:7px;margin-bottom:12px;}
+.srv-bullets{list-style:none;margin:0 0 14px;padding:0;}
+.srv-bullets li{position:relative;font-size:12.5px;font-weight:650;color:var(--t2);line-height:1.6;padding-left:13px;margin-bottom:7px;text-align:left;}
+.srv-bullets li:before{content:'';position:absolute;left:0;top:8px;width:4px;height:4px;border-radius:50%;background:var(--sand);}
+.srv-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto;}
+.srv-imgs.life{grid-template-columns:1fr 1fr;}
+.srv-fig{margin:0;border-radius:10px;overflow:hidden;background:#1a1a1a;position:relative;aspect-ratio:3/4;}
+.srv-fig.wide{grid-column:1 / -1;aspect-ratio:3/2;}
+.srv-fig img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;}
+.srv-fig figcaption{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.74));color:#fff;font-size:11px;font-weight:800;text-align:center;padding:16px 6px 8px;}
+@media(max-width:640px){.srv-cols{grid-template-columns:1fr;}.srv-imgs{grid-template-columns:1fr 1fr;}}
+.learn-cols{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;align-items:stretch;}
+.learn-col{background:#fff;border:1px solid var(--bdr);border-radius:18px;box-shadow:var(--sh);padding:18px;}
+.learn-col.imp{background:linear-gradient(160deg,#2E2016,#4A3828 60%,#6B5035);border:0;display:flex;flex-direction:column;}
+.learn-col-hd{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:900;letter-spacing:.06em;color:var(--brown);margin-bottom:14px;}
+.learn-col-hd.imp{color:#F2C078;}
+.learn-col-hd .dot{width:9px;height:9px;border-radius:50%;}
+.dot.good{background:var(--green);}.dot.imp{background:var(--amber);}
+.learn-col.good .learn-item + .learn-item{margin-top:12px;}
+.learn-item{background:var(--ivory);border:1px solid var(--bdr);border-radius:14px;padding:14px 15px;}
+.learn-item.big{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);flex:1;display:flex;flex-direction:column;}
+.learn-item.big .li-next{margin-top:auto;}
+.imp-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 4px 12px;}
+.imp-body .li-good{text-align:center;}
+.imp-body .li-why{text-align:center;margin-bottom:14px;}
+/* IMPROVEMENT 01 viz — gap bars */
+.imp-viz{width:100%;max-width:300px;}
+.imp-viz .ivz-bar{position:relative;height:26px;border-radius:7px;background:rgba(255,255,255,.08);margin-bottom:8px;overflow:hidden;}
+.imp-viz .ivz-fill{position:absolute;left:0;top:0;height:100%;border-radius:7px;background:linear-gradient(90deg,#C9A24B,#F2C078);}
+.imp-viz .ivz-fill.low{background:linear-gradient(90deg,#6B5035,#8A6E45);}
+.imp-viz .ivz-lbl{position:absolute;left:10px;top:0;height:100%;display:flex;align-items:center;font-size:10.5px;font-weight:800;color:#fff;z-index:1;}
+.imp-viz .ivz-val{position:absolute;right:10px;top:0;height:100%;display:flex;align-items:center;font-size:10.5px;font-weight:900;color:rgba(255,255,255,.9);z-index:1;}
+.imp-viz .ivz-gap{margin-top:6px;font-size:10px;font-weight:800;color:#F2C078;letter-spacing:.02em;}
+/* IMPROVEMENT 02 viz — expansion chips */
+.imp-viz.expand{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:7px;max-width:100%;}
+.exp-core{font-size:12px;font-weight:900;color:#fff;background:rgba(242,192,120,.18);border:1px solid rgba(242,192,120,.4);border-radius:8px;padding:6px 12px;}
+.exp-arrow{color:#F2C078;font-weight:900;}
+.exp-chip{font-size:11px;font-weight:800;color:#F2C078;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 11px;}
+/* GOOD POINT — centered layout to mirror IMPROVEMENT side */
+.learn-col.good{display:flex;flex-direction:column;}
+.learn-item.big-good{flex:1;display:flex;flex-direction:column;text-align:center;}
+.learn-item.big-good + .learn-item.big-good{margin-top:12px;}
+.learn-item.big-good .li-tag{align-self:center;}
+.good-body{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px 4px 12px;}
+.good-body .li-good{text-align:center;}
+.good-body .li-why{text-align:center;margin-bottom:14px;}
+.learn-item.big-good .li-next{margin-top:auto;text-align:center;}
+.good-viz{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:7px;width:100%;}
+.gvz-chip{font-size:11px;font-weight:800;color:var(--dsand);background:var(--cream);border:1px solid var(--bdr2);border-radius:999px;padding:5px 11px;}
+.gvz-core{font-size:12px;font-weight:900;color:var(--brown);background:rgba(160,139,110,.16);border:1px solid var(--bdr2);border-radius:8px;padding:6px 12px;}
+.gvz-arrow{color:var(--sand);font-weight:900;}
+.learn-item.big + .learn-item.big{margin-top:13px;}
+.li-tag{display:inline-block;font-size:10px;font-weight:900;letter-spacing:.05em;padding:4px 9px;border-radius:999px;margin-bottom:8px;}
+.li-tag.good{background:var(--greenbg);color:var(--green);}
+.li-tag.imp{background:rgba(242,192,120,.2);color:#F2C078;}
+.li-good{font-size:13px;font-weight:800;color:var(--t1);line-height:1.5;margin-bottom:6px;}
+.li-good.imp{color:#fff;font-size:14.5px;}
+.li-good.imp b{color:#F2C078;}
+.li-why{font-size:11px;font-weight:700;color:var(--t3);line-height:1.6;margin-bottom:8px;}
+.learn-item.big .li-why{color:rgba(240,235,227,.7);}
+.li-next{font-size:11.5px;font-weight:800;color:var(--brown);background:#fff;border:1px solid var(--bdr);border-radius:9px;padding:8px 10px;line-height:1.55;}
+.li-next b{color:var(--dsand);}
+.li-next.imp{background:rgba(242,192,120,.14);border-color:rgba(242,192,120,.32);color:#fff;}
+.li-next.imp b{color:#F2C078;}
+@media(max-width:1050px){#tab1 .hero-grid{grid-template-columns:repeat(2,1fr)}.review-split{grid-template-columns:1fr}.learn-cols{grid-template-columns:1fr}}
+@media(max-width:640px){#tab1 .hero-grid{grid-template-columns:1fr}.rev-grid.three{grid-template-columns:1fr 1fr}}
+
+
+
+/* MERGE PATCH — embedded KARINA content tab */
+.karina-content-frame{
+  width:100%;
+  min-height:7200px;
+  border:0;
+  border-radius:24px;
+  background:#FAF8F5;
+  box-shadow:var(--sh);
+  display:block;
+}
+#tab4{
+  padding-top:0;
+  width:min(1520px, calc(100vw - 56px));
+  max-width:none;
+  margin-left:50%;
+  transform:translateX(-50%);
+}
+#tab4 .karina-content-frame{
+  width:100%;
+  margin:0 auto;
+}
+@media(max-width:900px){
+  #tab4{width:calc(100vw - 28px);}
+  .karina-content-frame{min-height:8800px;border-radius:18px;}
+}
+
+
+/* === USER REVISION 260630 — TAB1/TAB3 VISUAL ALIGNMENT === */
+/* TAB1 01: hero styling image zoom-out / box adjustment */
+#tab1 .rev-grid.one .rev-fig.wide{
+  height:380px;
+  background:#fff;
+  border:1px solid var(--bdr);
+}
+#tab1 .rev-grid.one .rev-fig.wide img{
+  object-fit:contain;
+  object-position:center center;
+  padding:10px 0;
+  background:#fff;
+}
+
+/* TAB1 AI Insight: make right brown box same horizontal width as left good-point box */
+#tab1 .learn-cols{
+  grid-template-columns:1fr 1fr;
+}
+
+/* TAB3 03: align visual center of TOP 3 celeb images */
+#tab3 .celeb-rank-bar .celeb-card:nth-child(1) .celeb-photo img{
+  object-position:center 32%;
+}
+#tab3 .celeb-rank-bar .celeb-card:nth-child(2) .celeb-photo img{
+  object-position:center 54%;
+}
+#tab3 .celeb-rank-bar .celeb-card:nth-child(3) .celeb-photo img{
+  object-position:center 40%;
+}
+
+
+/* === TAB4 WARM PALETTE OVERRIDE (beige / white / brown only) === */
+#tab4 .tab4-mood-block.winter,#tab4 .tab4-mood-block.karina_winter{border-top-color:var(--dsand);}
+#tab4 .tab4-mood-block.karina-block{border-top-color:var(--sand);}
+#tab4 .tab4-mini-tag{background:var(--brown);color:#fff;}
+#tab4 .tab4-mini-tag:before{background:var(--lsand);}
+#tab4 .tab4-mini-tag.winter:before{background:var(--dsand);}
+#tab4 .tab4-chips.mood span{background:var(--brown);color:var(--cream);}
+#tab4 .tab4-chips.place span{background:#ece5d4;color:#665838;}
+#tab4 .winter .tab4-chips.place span{background:#e8dcc4;color:#6b5a3e;}
+#tab4 .tab4-key{background:#f5f1e8;border-left-color:var(--lsand);}
+#tab4 .winter .tab4-key{background:#f3ede1;border-left-color:var(--dsand);}
+#tab4 .tab4-direction{background:#fbf7ef;border-color:var(--bdr2);}
+#tab4 .winter .tab4-direction{background:#f6f0e6;border-color:var(--bdr2);}
+#tab4 .tab4-direction-title{color:var(--dsand);}
+#tab4 .winter .tab4-direction-title{color:var(--dsand);}
+#tab4 .tab4-direction li:before{background:#ecdfca;color:var(--dsand);}
+#tab4 .winter .tab4-direction li:before{background:var(--dsand);color:#fff;}
+/* karina ambassador combined card */
+#tab4 .tab4-karina-sub{margin-top:4px;}
+#tab4 .tab4-karina-divider{height:1px;background:var(--bdr);margin:28px 0;}
+</style>
+<style>
+/* TAB2 embed frame — content replacement only */
+#tab2{padding:0;}
+.tab2-content-frame{width:100%;border:0;display:block;min-height:1200px;overflow:hidden;}
+</style>
+<style>
+/* =========================================================
+   TAB3 · 카테고리 마케팅 — 25FW Learning → 26FW Action
+   ========================================================= */
+#tab3 .hero h2{font-size:34px;}
+#tab3 .bridge{display:grid;grid-template-columns:1fr 56px 1fr;align-items:center;gap:0;margin:26px 0 8px;}
+#tab3 .bridge .bcol{background:#fff;border:1px solid var(--bdr);border-radius:18px;box-shadow:var(--sh);padding:20px 22px;text-align:left;}
+#tab3 .bridge .bcol.past{border-top:3px solid #4A3828;}
+#tab3 .bridge .bcol.now{border-top:3px solid var(--sand);background:linear-gradient(150deg,#2E2016,#4A3828 60%,#6B5035);}
+#tab3 .bridge .b-yr{font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;}
+#tab3 .bridge .past .b-yr{color:#4A3828;}
+#tab3 .bridge .now .b-yr{color:var(--lsand);}
+#tab3 .bridge .b-head{font-size:17px;font-weight:900;line-height:1.4;color:var(--t1);}
+#tab3 .bridge .now .b-head{color:#fff;}
+#tab3 .bridge .b-sub{font-size:12px;font-weight:700;line-height:1.6;margin-top:8px;color:var(--t2);}
+#tab3 .bridge .now .b-sub{color:rgba(240,235,227,.84);}
+#tab3 .bridge .barrow{display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900;color:var(--sand);}
+@media(max-width:900px){#tab3 .bridge{grid-template-columns:1fr;gap:12px;}#tab3 .bridge .barrow{transform:rotate(90deg);height:36px;}}
+
+/* Learning point cards (3 problems) */
+#tab3 .learn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;}
+#tab3 .learn-card{background:#fff;border:1px solid var(--bdr);border-top:3px solid #4A3828;border-radius:18px;box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;text-align:left;}
+#tab3 .learn-card .lc-visual{height:300px;background:#1a1a1a;overflow:hidden;position:relative;}
+#tab3 .learn-card .lc-visual img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
+#tab3 .learn-card.cal .lc-visual{height:300px;background:#fff;display:flex;align-items:center;justify-content:center;padding:10px 12px;}
+#tab3 .learn-card.cal .lc-visual img{object-fit:contain;object-position:center;width:100%;height:auto;max-height:100%;}
+#tab3 .learn-card .lc-num{position:absolute;top:12px;left:12px;background:rgba(74,56,40,.92);color:#fff;font-size:11px;font-weight:900;letter-spacing:.08em;border-radius:999px;padding:5px 12px;z-index:2;}
+#tab3 .learn-card .lc-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;}
+#tab3 .learn-card h4{font-size:16px;font-weight:900;color:var(--t1);margin-bottom:10px;line-height:1.35;}
+#tab3 .learn-card ul{list-style:none;display:grid;gap:8px;}
+#tab3 .learn-card li{font-size:12.5px;font-weight:700;color:var(--t2);line-height:1.6;position:relative;padding-left:14px;text-align:left;}
+#tab3 .learn-card li:before{content:'';position:absolute;left:0;top:.58em;width:5px;height:5px;border-radius:50%;background:#4A3828;}
+#tab3 .learn-card li b{color:var(--t1);font-weight:900;}
+
+/* 25FW grouped areas — 상품 경쟁력 / 마케팅 커뮤니케이션 시기 */
+#tab3 .learn-area{margin-bottom:16px;}
+/* side-by-side: 상품 경쟁력 (left) | 커뮤니케이션 시기 (right) */
+#tab3 .learn-split{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;align-items:start;}
+#tab3 .learn-split .learn-area{margin-bottom:0;}
+#tab3 .area-body.comm-stack{display:flex;flex-direction:column;gap:14px;}
+#tab3 .area-band{display:flex;align-items:center;gap:10px;background:var(--brown);color:#fff;border-radius:12px 12px 0 0;padding:11px 18px;}
+#tab3 .area-band .ab-no{width:22px;height:22px;border-radius:50%;background:rgba(200,184,154,.25);color:var(--lsand);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;}
+#tab3 .area-band .ab-title{font-size:14px;font-weight:900;letter-spacing:.02em;}
+#tab3 .area-band .ab-sub{margin-left:auto;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--lsand);}
+#tab3 .area-body{background:var(--ivory);border:1px solid var(--bdr);border-top:0;border-radius:0 0 14px 14px;padding:16px;}
+#tab3 .area-body.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+#tab3 .area-body.comm{display:grid;grid-template-columns:1.35fr 1fr;gap:16px;align-items:stretch;}
+#tab3 .learn-card.flat{border-top:3px solid #4A3828;}
+/* calendar card variant inside comm area — wide, uncropped */
+#tab3 .cal-card{background:#fff;border:1px solid var(--bdr);border-top:3px solid #4A3828;border-radius:18px;box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;}
+#tab3 .cal-card .cal-wrap{padding:16px;background:#fff;display:flex;align-items:center;justify-content:center;flex:1;}
+#tab3 .cal-card .cal-wrap img{width:100%;height:auto;object-fit:contain;display:block;}
+#tab3 .cal-card .cal-cap{font-size:11px;font-weight:800;color:var(--t3);text-align:center;padding:0 16px 14px;}
+#tab3 .comm-text{background:#fff;border:1px solid var(--bdr);border-top:3px solid #4A3828;border-radius:18px;box-shadow:var(--sh);padding:20px 22px;display:flex;flex-direction:column;justify-content:center;}
+#tab3 .comm-text h4{font-size:16px;font-weight:900;color:var(--t1);margin-bottom:12px;line-height:1.35;}
+#tab3 .comm-text ul{list-style:none;display:grid;gap:9px;}
+#tab3 .comm-text li{font-size:12.5px;font-weight:700;color:var(--t2);line-height:1.6;position:relative;padding-left:14px;}
+#tab3 .comm-text li:before{content:'';position:absolute;left:0;top:.58em;width:5px;height:5px;border-radius:50%;background:#4A3828;}
+#tab3 .comm-text li b{color:var(--t1);font-weight:900;}
+@media(max-width:1000px){#tab3 .area-body.two,#tab3 .area-body.comm{grid-template-columns:1fr;}#tab3 .learn-split{grid-template-columns:1fr;}}
+
+/* Learning summary band */
+#tab3 .learn-summary{background:var(--cream);border:1px solid rgba(74,56,40,.28);border-radius:16px;padding:18px 24px;margin-top:16px;text-align:left;}
+#tab3 .learn-summary .ls-label{font-size:11px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#4A3828;margin-bottom:10px;}
+#tab3 .learn-summary ul{list-style:none;display:grid;gap:8px;}
+#tab3 .learn-summary li{font-size:13px;font-weight:800;color:#3C3020;line-height:1.6;position:relative;padding-left:16px;}
+#tab3 .learn-summary li:before{content:'';position:absolute;left:0;top:.55em;width:6px;height:6px;border-radius:50%;background:#4A3828;}
+
+/* 26FW action — 3 directions */
+#tab3 .action-dir{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;}
+#tab3 .action-card{background:linear-gradient(150deg,#2E2016,#4A3828 60%,#6B5035);border-radius:18px;padding:22px 22px 20px;color:#fff;position:relative;overflow:hidden;text-align:left;}
+#tab3 .action-card:before{content:'';position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:rgba(200,184,154,.14);}
+#tab3 .action-card>*{position:relative;z-index:1;}
+#tab3 .action-card .ac-no{font-size:10px;font-weight:900;letter-spacing:.16em;color:var(--lsand);margin-bottom:10px;}
+#tab3 .action-card h4{font-size:17px;font-weight:900;color:#fff;line-height:1.4;margin-bottom:8px;}
+#tab3 .action-card p{font-size:12.5px;font-weight:700;color:rgba(240,235,227,.85);line-height:1.65;}
+#tab3 .action-card p b{color:var(--lsand);font-weight:900;}
+
+/* Season styling board (FALL / WINTER) */
+#tab3 .season-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+#tab3 .season-card{background:#fff;border:1px solid var(--bdr);border-top:3px solid var(--lsand);border-radius:18px;box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;text-align:left;}
+#tab3 .season-card .sc-head{display:flex;align-items:center;gap:10px;padding:14px 18px;background:linear-gradient(180deg,#fff,var(--cream));border-bottom:1px solid var(--bdr);}
+#tab3 .season-card .sc-season{font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--dsand);background:#fff;border:1px solid var(--bdr2);border-radius:999px;padding:4px 10px;}
+#tab3 .season-card .sc-month{font-size:13px;font-weight:900;color:var(--t1);}
+#tab3 .season-card .sc-items{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+#tab3 .season-card .sc-items span{font-size:10px;font-weight:900;border-radius:999px;padding:4px 10px;background:#F6BFC0;color:#fff;}
+#tab3 .season-card .sc-items span.sub{background:#A6A6A6;}
+#tab3 .season-card .sc-styling{height:330px;background:#fff;overflow:hidden;}
+#tab3 .season-card .sc-styling img{width:100%;height:100%;object-fit:contain;object-position:center;background:#fff;}
+#tab3 .season-card .sc-product{border-top:1px solid var(--bdr);background:#fff;padding:10px;height:92px;display:flex;align-items:center;justify-content:center;}
+#tab3 .season-card .sc-product img{max-width:100%;max-height:100%;object-fit:contain;}
+#tab3 .season-card .sc-note{padding:12px 16px 14px;font-size:11.5px;font-weight:700;color:var(--t2);line-height:1.55;border-top:1px solid var(--bdr);margin-top:auto;}
+#tab3 .season-card .sc-note b{color:var(--brown);font-weight:900;}
+
+@media(max-width:1000px){#tab3 .learn-grid,#tab3 .action-dir,#tab3 .season-row{grid-template-columns:1fr;}#tab3 .learn-card .lc-visual,#tab3 .learn-card.cal .lc-visual{height:340px;}#tab3 .season-card .sc-styling{height:380px;}}
+</style>
+<style>
+/* V5 PATCH — TAB2 wide iframe + TAB3 hero keyword card alignment */
+#tab2{
+  padding-top:0;
+  width:min(1520px, calc(100vw - 56px));
+  max-width:none;
+  margin-left:50%;
+  transform:translateX(-50%);
+}
+#tab2 .tab2-content-frame{
+  width:100% !important;
+  margin:0 auto;
+  border:0;
+  display:block;
+}
+#tab3 .hero-grid{
+  grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+  width:100%;
+  max-width:none;
+  margin-left:auto;
+  margin-right:auto;
+}
+#tab3 .hero-card{
+  width:100%;
+}
+@media(max-width:900px){
+  #tab2{width:calc(100vw - 28px);}
+  #tab3 .hero-grid{grid-template-columns:1fr !important;}
+}
+</style>
+<style>
+/* TAB4 — 26FW moodboard direct integration */
+#tab4{width:auto !important;max-width:none !important;margin-left:0 !important;transform:none !important;padding-top:0 !important;}
+#tab4 .tab4-hero{text-align:center;}
+#tab4 .tab4-hero .lead{margin-left:auto;margin-right:auto;max-width:920px;}
+#tab4 .tab4-summary-grid{grid-template-columns:repeat(4,minmax(0,1fr));max-width:980px;margin-left:auto;margin-right:auto;}
+#tab4 .tab4-mood-stack{display:grid;gap:26px;}
+#tab4 .tab4-mood-block{background:#fff;border:1px solid var(--bdr);border-top:4px solid var(--lsand);border-radius:24px;box-shadow:var(--sh);padding:24px;overflow:hidden;}
+#tab4 .tab4-mood-block.winter,#tab4 .tab4-mood-block.karina_winter{border-top-color:var(--brown);}
+#tab4 .tab4-sec-hd{margin-bottom:18px;align-items:center;}
+#tab4 .tab4-sec-hd .sec-title{font-size:20px;letter-spacing:-.02em;}
+#tab4 .tab4-block-sub{font-size:12px;font-weight:800;color:var(--t3);margin-top:4px;letter-spacing:.02em;}
+#tab4 .tab4-image-grid{display:grid;gap:12px;}
+#tab4 .tab4-image-grid.grid-10{grid-template-columns:repeat(5,minmax(0,1fr));}
+#tab4 .tab4-image-grid.grid-6{grid-template-columns:repeat(3,minmax(0,1fr));}
+#tab4 .tab4-img-card{margin:0;position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:var(--cream);border:1px solid var(--bdr);box-shadow:0 6px 18px rgba(160,139,110,.10);}
+#tab4 .tab4-img-card img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:transform .3s ease;}
+#tab4 .tab4-img-card:hover img{transform:scale(1.025);}
+#tab4 .tab4-img-card figcaption{position:absolute;left:10px;top:10px;z-index:1;background:rgba(46,32,22,.74);color:#fff;border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(5px);border-radius:999px;padding:5px 9px;font-size:10px;font-weight:900;letter-spacing:.08em;}
+@media(max-width:1100px){#tab4 .tab4-image-grid.grid-10{grid-template-columns:repeat(3,minmax(0,1fr));}#tab4 .tab4-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:720px){#tab4 .tab4-image-grid.grid-10,#tab4 .tab4-image-grid.grid-6{grid-template-columns:repeat(2,minmax(0,1fr));}#tab4 .tab4-summary-grid{grid-template-columns:1fr;}#tab4 .tab4-mood-block{padding:18px;border-radius:20px;}#tab4 .tab4-sec-hd{align-items:flex-start;}#tab4 .tab4-sec-hd .sec-sub{margin-left:0;width:100%;}}
+</style>
+<style>
+/* TAB4 V2 — restore original moodboard text, keep dashboard tone */
+#tab4{width:auto !important;max-width:none !important;margin-left:0 !important;transform:none !important;padding-top:0 !important;}
+#tab4 .tab4-ai-hero{background:#1b1b1f;color:#fff;text-align:left;padding:34px 40px 38px;border-radius:26px;box-shadow:var(--sh2);border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden;}
+#tab4 .tab4-ai-hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--lsand),#8c97a2);}
+#tab4 .tab4-ai-hero .eyebrow{color:#9fb0ca;letter-spacing:.32em;margin-bottom:18px;}
+#tab4 .tab4-ai-hero h2{color:#fff;font-size:clamp(24px,3.2vw,42px);line-height:1.45;letter-spacing:-.045em;margin:0;}
+#tab4 .tab4-ai-hero h2 em{color:#d8c39e;font-style:normal;background:linear-gradient(transparent 62%, rgba(189,169,136,.26) 62% 92%, transparent 92%);}
+#tab4 .tab4-mood-stack{display:grid;gap:30px;margin-top:28px;}
+#tab4 .tab4-mood-block{background:#fff;border:1px solid var(--bdr);border-top:4px solid var(--lsand);border-radius:24px;box-shadow:var(--sh);padding:26px;overflow:hidden;}
+#tab4 .tab4-mood-block.winter{border-top-color:#8c97a2;}
+#tab4 .tab4-sec-hd{margin-bottom:18px;align-items:center;}
+#tab4 .tab4-sec-hd .sec-title{font-size:22px;letter-spacing:-.03em;}
+#tab4 .tab4-block-sub{font-size:14px;font-weight:800;color:var(--t2);margin-top:5px;letter-spacing:-.01em;}
+#tab4 .tab4-image-grid{display:grid;gap:12px;}
+#tab4 .tab4-image-grid.grid-10{grid-template-columns:repeat(5,minmax(0,1fr));}
+#tab4 .tab4-image-grid.grid-6{grid-template-columns:repeat(3,minmax(0,1fr));}
+#tab4 .tab4-img-card{margin:0;position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:var(--cream);border:1px solid var(--bdr);box-shadow:0 6px 18px rgba(160,139,110,.10);}
+#tab4 .tab4-img-card img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;transition:transform .3s ease;}
+#tab4 .tab4-img-card:hover img{transform:scale(1.025);}
+#tab4 .tab4-img-card figcaption{position:absolute;left:10px;top:10px;z-index:1;background:rgba(46,32,22,.74);color:#fff;border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(5px);border-radius:999px;padding:5px 9px;font-size:10px;font-weight:900;letter-spacing:.08em;}
+#tab4 .tab4-copy-layout{display:grid;grid-template-columns:minmax(360px,.95fr) minmax(0,1.25fr);gap:24px;align-items:start;}
+#tab4 .tab4-copy-panel{background:linear-gradient(180deg,#fff 0%,#faf8f5 100%);border:1px solid var(--bdr);border-radius:20px;padding:24px;}
+#tab4 .tab4-mini-tag{display:inline-flex;align-items:center;gap:8px;background:#1b1b1f;color:#fff;border-radius:8px;padding:8px 14px;font-size:12px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;}
+#tab4 .tab4-mini-tag:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lsand);display:inline-block;}
+#tab4 .tab4-mini-tag.winter:before{background:#8c97a2;}
+#tab4 .tab4-copy-panel h3{margin:20px 0 8px;font-size:28px;line-height:1.15;letter-spacing:-.055em;color:var(--t1);}
+#tab4 .tab4-desc{margin:0 0 24px;color:var(--t3);font-size:15px;line-height:1.65;font-weight:600;}
+#tab4 .tab4-copy-block{margin-top:20px;}
+#tab4 .tab4-label{display:flex;align-items:center;gap:10px;margin:0 0 12px;color:var(--t4);font-size:12px;font-weight:900;letter-spacing:.12em;}
+#tab4 .tab4-label:after{content:"";height:1px;background:var(--bdr2);flex:1;}
+#tab4 .tab4-chips{display:flex;flex-wrap:wrap;gap:9px;}
+#tab4 .tab4-chips span{display:inline-flex;align-items:center;border-radius:999px;padding:9px 16px;font-size:13px;font-weight:800;line-height:1.25;}
+#tab4 .tab4-chips.place span{background:#ece5d4;color:#665838;}
+#tab4 .tab4-chips.mood span{background:#1b1b1f;color:#fff;}
+#tab4 .winter .tab4-chips.place span{background:#e7e9ec;color:#3c424a;}
+#tab4 .tab4-key{margin-top:24px;background:#f5f1e8;border-left:3px solid var(--lsand);border-radius:0 12px 12px 0;padding:17px 20px;}
+#tab4 .winter .tab4-key{background:#eef1f3;border-left-color:#8c97a2;}
+#tab4 .tab4-key p{margin:0;color:var(--t1);font-size:15px;font-weight:700;line-height:1.65;}
+#tab4 .tab4-direction{margin-top:22px;border:1px solid var(--bdr2);border-radius:16px;background:#fbf7ef;padding:20px;}
+#tab4 .winter .tab4-direction{background:#eef1f3;border-color:#d8dee4;}
+#tab4 .tab4-direction-title{font-size:12px;font-weight:900;letter-spacing:.22em;text-transform:uppercase;color:var(--sand);margin-bottom:14px;}
+#tab4 .winter .tab4-direction-title{color:#8c97a2;}
+#tab4 .tab4-direction ol{margin:0;padding:0;list-style:none;counter-reset:dir;display:grid;gap:12px;}
+#tab4 .tab4-direction li{counter-increment:dir;display:flex;gap:12px;color:var(--t2);font-size:13.5px;line-height:1.55;font-weight:600;}
+#tab4 .tab4-direction li:before{content:counter(dir,decimal-leading-zero);min-width:24px;height:24px;border-radius:7px;background:#ecdfca;color:var(--sand);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;}
+#tab4 .winter .tab4-direction li:before{background:#8c97a2;color:#fff;}
+@media(max-width:1100px){#tab4 .tab4-image-grid.grid-10{grid-template-columns:repeat(3,minmax(0,1fr));}#tab4 .tab4-copy-layout{grid-template-columns:1fr;}}
+@media(max-width:720px){#tab4 .tab4-ai-hero{padding:28px 24px;}#tab4 .tab4-image-grid.grid-10,#tab4 .tab4-image-grid.grid-6{grid-template-columns:repeat(2,minmax(0,1fr));}#tab4 .tab4-mood-block{padding:18px;border-radius:20px;}#tab4 .tab4-sec-hd{align-items:flex-start;}#tab4 .tab4-sec-hd .sec-sub{margin-left:0;width:100%;}#tab4 .tab4-copy-panel h3{font-size:24px;}}
+</style>
+<style>
+/* TAB4 V3 — requested left-aligned single-line headers + copy alignment */
+#tab4 .tab4-sec-hd{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  gap:12px !important;
+  text-align:left !important;
+  margin-bottom:18px !important;
+}
+#tab4 .tab4-sec-hd .sec-num{
+  flex:0 0 26px !important;
+  margin:0 !important;
+}
+#tab4 .tab4-sec-hd > div{
+  display:flex !important;
+  align-items:baseline !important;
+  justify-content:flex-start !important;
+  gap:10px !important;
+  min-width:0 !important;
+  flex:0 1 auto !important;
+}
+#tab4 .tab4-sec-hd .sec-title{
+  margin:0 !important;
+  white-space:nowrap !important;
+  text-align:left !important;
+  line-height:1.2 !important;
+}
+#tab4 .tab4-sec-hd .tab4-block-sub{
+  margin:0 !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  text-align:left !important;
+  line-height:1.25 !important;
+}
+#tab4 .tab4-sec-hd .sec-sub{
+  margin-left:auto !important;
+  flex:0 0 auto !important;
+  white-space:nowrap !important;
+  text-align:right !important;
+}
+#tab4 .tab4-copy-panel,
+#tab4 .tab4-copy-panel h3,
+#tab4 .tab4-copy-panel .tab4-desc,
+#tab4 .tab4-copy-panel .tab4-copy-block,
+#tab4 .tab4-label,
+#tab4 .tab4-chips,
+#tab4 .tab4-key,
+#tab4 .tab4-key p,
+#tab4 .tab4-direction,
+#tab4 .tab4-direction-title,
+#tab4 .tab4-direction ol,
+#tab4 .tab4-direction li{
+  text-align:left !important;
+}
+#tab4 .tab4-copy-panel{
+  align-items:flex-start !important;
+}
+#tab4 .tab4-mini-tag{
+  margin-left:0 !important;
+  margin-right:auto !important;
+}
+#tab4 .tab4-chips{
+  justify-content:flex-start !important;
+}
+#tab4 .tab4-direction-title{
+  justify-content:flex-start !important;
+}
+#tab4 .tab4-direction ol{
+  padding-left:0 !important;
+  margin-left:0 !important;
+}
+@media(max-width:900px){
+  #tab4 .tab4-sec-hd{align-items:flex-start !important;flex-wrap:wrap !important;}
+  #tab4 .tab4-sec-hd > div{flex-wrap:wrap !important;}
+  #tab4 .tab4-sec-hd .sec-sub{margin-left:38px !important;text-align:left !important;}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<header class="top-header">
+<div class="brand"><h1>MLB 26FW</h1><span>Marketing Strategy Dashboard</span></div>
+<div class="hdr-pills"><span class="pill">HIP-CITY LIFESTYLE</span><span class="pill">FALL/WINTER</span><span class="pill">EXECUTIVE VIEW</span></div>
+</header>
+<nav class="tabbar"><button class="tabbtn active" data-tab="tab1"><span class="tabnum">01</span> 시즌 러닝</button><button class="tabbtn" data-tab="tab2"><span class="tabnum">02</span> 전략 과제</button><button class="tabbtn" data-tab="tab3"><span class="tabnum">03</span> 카테고리 마케팅</button><button class="tabbtn" data-tab="tab4"><span class="tabnum">04</span> 26FW 무드보드</button></nav>
+<main class="container"><section class="tab active" id="tab1">
+<div class="hero">
+<div class="eyebrow">시즌 러닝</div>
+<h2>26SS <em>SEASON REVIEW</em></h2>
+<p class="lead">26SS는 K-POP 화제성과 MLB 힙 페미닌 스포티브 라이프스타일로 브랜드 버즈를 견인.<br/>카리나·TWS·키스오브라이프 영향력을 활용한 화보·행사·콜라보 캠페인으로 확장 커뮤니케이션에 성공.<br/>다만 매출을 견인할 시그니처 아이템과 라이프스타일 씬 확장은 26FW 핵심 과제로 도출.</p>
+<div class="hero-grid">
+<div class="hero-card"><div class="hc-label">GOOD POINT 01</div><div class="hc-value">K-POP</div><div class="hc-note">K-POP 영향력 활용 화보·행사·콜라보 캠페인으로 버즈 확장 성공</div></div>
+<div class="hero-card"><div class="hc-label">GOOD POINT 02</div><div class="hc-value">라이프 스타일</div><div class="hc-note">힙 페미닌 스포티브 라이프스타일·확장 커뮤니케이션 전략 우수</div></div>
+<div class="hero-card imp"><div class="hc-label">IMPROVEMENT 01</div><div class="hc-value">카테고리 마케팅</div><div class="hc-note">볼캡 외 히어로 아이템·매출 견인 시그니처 ‘앵커 상품’ 부재</div></div>
+<div class="hero-card imp"><div class="hc-label">IMPROVEMENT 02</div><div class="hc-value">힙 스포티브 씬 확장</div><div class="hc-note">라이프스타일 씬 추가 확장 여지 — 26FW 도약 과제</div></div>
+</div>
+</div>
+<div class="sec"><div class="sec-hd"><span class="sec-num">01</span><span class="sec-title">26SS SEASON REVIEW</span><span class="sec-sub">Good Point &amp; Improvement</span></div>
+<div class="lifestyle-ribbon">HIP FEMININE SPORTIVE &amp; K-POP LIFESTYLE</div>
+<div class="srv-board">
+<!-- GOOD POINT (2 columns) -->
+<div class="srv-side good">
+<div class="srv-cols">
+<div class="srv-col">
+<div class="srv-coltitle">K-POP</div>
+<ul class="srv-bullets">
+<li>K-POP 셀럽 IP를 활용한 통합 커뮤니케이션으로 브랜드 버즈 확장에 성공, 시즌 화제성을 선도</li>
+<li>카리나·TWS·키스오브라이프 등 톱티어 아티스트의 영향력을 화보·오프라인 행사·콜라보레이션 전 채널에 걸쳐 일관되게 전개하며 캠페인 파급력 극대화</li>
+</ul>
+<div class="srv-imgs">
+<figure class="srv-fig"><img alt="K-POP 화보" loading="lazy" src="assets/review2/kpop_hwabo.jpg"/><figcaption>화보</figcaption></figure>
+<figure class="srv-fig"><img alt="공항패션" loading="lazy" src="assets/review2/kpop_airport.jpg"/><figcaption>공항패션</figcaption></figure>
+<figure class="srv-fig"><img alt="오프라인 행사" loading="lazy" src="assets/review2/kpop_offline.jpg"/><figcaption>오프라인 행사</figcaption></figure>
+<figure class="srv-fig"><img alt="콜라보레이션" loading="lazy" src="assets/review2/kpop_collab.jpg"/><figcaption>콜라보레이션</figcaption></figure>
+</div>
+</div>
+<div class="srv-col">
+<div class="srv-coltitle">라이프 스타일</div>
+<ul class="srv-bullets">
+<li>페스티벌 무드를 바탕으로 힙 페미닌 스트릿 라이프스타일을 명확히 구현, 브랜드만의 정체성을 대중에게 효과적으로 각인</li>
+<li>K-POP 앰버서더부터 인플루언서까지 잇는 단계별 확장 커뮤니케이션 전략으로 타깃 도달 범위와 콘텐츠 신뢰도를 동시에 확보</li>
+</ul>
+<div class="srv-imgs life">
+<figure class="srv-fig wide"><img alt="K-POP 화보" loading="lazy" src="assets/review2/life_kpop_hwabo.jpg"/><figcaption>K-POP 화보</figcaption></figure>
+<figure class="srv-fig"><img alt="인플루언서 컨텐츠" loading="lazy" src="assets/review2/life_influencer1.jpg"/><figcaption>인플루언서 컨텐츠</figcaption></figure>
+<figure class="srv-fig"><img alt="인플루언서 컨텐츠" loading="lazy" src="assets/review2/life_influencer2.jpg"/><figcaption>인플루언서 컨텐츠</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sec"><div class="sec-hd"><span class="sec-num">02</span><span class="sec-title">AI 인사이트</span><span class="sec-sub">Learning to Action</span></div>
+<div class="ai-badge" style="margin-bottom:16px;"><span class="blink"></span>AI ANALYSIS · GOOD POINT &amp; IMPROVEMENT</div>
+<div class="learn-cols">
+<div class="learn-col good">
+<div class="learn-col-hd"><span class="dot good"></span>GOOD POINT · 유지·강화</div>
+<div class="learn-item big-good">
+<div class="li-tag good">GOOD 01 · K-POP</div>
+<div class="good-body">
+<div class="li-good">K-POP 영향력 활용으로 <b>브랜드 버즈 확장</b>에 성공.</div>
+<div class="li-why">분석 : 카리나·TWS·키스오브라이프 등 셀럽 IP를 화보·행사·콜라보로 다채널 운용 → 화제성 극대화.</div>
+<div class="good-viz">
+<div class="gvz-chip">화보</div><div class="gvz-chip">오프라인 행사</div><div class="gvz-chip">콜라보</div><div class="gvz-chip">공항패션</div>
+</div>
+</div>
+<div class="li-next"><b>26FW</b> 카리나 코어 + 시즌별 트렌드 피크 셀럽으로 K-POP 버즈 모멘텀 지속.</div>
+</div>
+<div class="learn-item big-good">
+<div class="li-tag good">GOOD 02 · 라이프 스타일</div>
+<div class="good-body">
+<div class="li-good">힙 페미닌 스포티브 라이프스타일을 <b>일관되게 전달</b>.</div>
+<div class="li-why">분석 : 앰버서더부터 인플루언서까지 잇는 확장 커뮤니케이션이 무드를 라이프스타일로 각인.</div>
+<div class="good-viz flow">
+<span class="gvz-core">앰버서더</span><span class="gvz-arrow">▸</span><span class="gvz-chip">인플루언서</span><span class="gvz-arrow">▸</span><span class="gvz-chip">유저 확산</span>
+</div>
+</div>
+<div class="li-next"><b>26FW</b> 앰버서더–인플루언서 확장 구조를 유지하되 일상 시티 라이프 씬으로 폭 확대.</div>
+</div>
+</div>
+<div class="learn-col imp">
+<div class="learn-col-hd imp"><span class="dot imp"></span>IMPROVEMENT · 26FW 핵심 과제</div>
+<div class="learn-item big">
+<div class="li-tag imp">IMPROVEMENT 01 · 카테고리 마케팅</div>
+<div class="imp-body">
+<div class="li-good imp">매출을 더 폭발적으로 끌어낼 <b>시그니처 아이템</b>이 필요하다.</div>
+<div class="li-why">분석 : 화제성은 확보됐으나, 볼캡 외 히어로 아이템이 부재 — 시즌을 대표해 매출을 견인할 ‘앵커 상품’이 없었다.</div>
+<div class="imp-viz">
+<div class="ivz-bar"><div class="ivz-fill" style="width:88%"></div><span class="ivz-lbl">화제성</span><span class="ivz-val">88</span></div>
+<div class="ivz-bar"><div class="ivz-fill low" style="width:42%"></div><span class="ivz-lbl">매출 전환</span><span class="ivz-val">42</span></div>
+<div class="ivz-gap">GAP ▸ 시그니처 앵커 아이템으로 매출 갭 해소</div>
+</div>
+</div>
+<div class="li-next imp"><b>26FW ACTION</b> 볼캡을 잇는 시즌 시그니처 앵커 아이템을 선정·집중 푸시해 매출 임팩트 극대화.</div>
+</div>
+<div class="learn-item big">
+<div class="li-tag imp">IMPROVEMENT 02 · 힙 스포티브 씬 확장</div>
+<div class="imp-body">
+<div class="li-good imp"><b>힙 페미닌</b>과 더불어 <b>힙 스포티브 라이프스타일로 확장</b>했어야 했다.</div>
+<div class="li-why">분석 : 화보·무대 중심에 머물러, 일상·시티 라이프 등 생활 접점으로의 씬 확장 여지가 남아 있었다.</div>
+<div class="imp-viz expand">
+<span class="exp-core">힙 스포티브</span>
+<span class="exp-arrow">▸</span>
+<span class="exp-chip">데일리</span>
+<span class="exp-chip">시티 라이프</span>
+<span class="exp-chip">콘텐츠</span>
+</div>
+</div>
+<div class="li-next imp"><b>26FW ACTION</b> 데일리·시티 라이프 씬으로 힙 스포티브를 확장해 라이프스타일 브랜드 인식 강화.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="takeaway"><div class="label">TAB 1 KEY TAKEAWAY</div><h3>K-POP 버즈 확장·힙 페미닌 스포티브 라이프스타일의 성과 위에, 시그니처 앵커 아이템과 라이프스타일 씬 확장으로 도약</h3><p>26SS는 K-POP 영향력과 확장 커뮤니케이션으로 브랜드 버즈를 견인하며 힙 페미닌 스포티브 라이프스타일을 각인. 26FW는 볼캡을 잇는 시즌 시그니처 앵커 아이템으로 매출 임팩트를 만들고, 힙 스포티브를 일상·시티 라이프 씬으로 확장하는 것이 핵심 과제.</p></div>
+</div></section><section class="tab" id="tab2"><iframe class="tab2-content-frame" loading="lazy" src="tab2_embed/index.html" style="width:100%;border:0;display:block;min-height:1200px;overflow:hidden;" title="TAB2 전략 과제"></iframe></section><section class="tab" id="tab3">
+<div class="hero">
+<div class="eyebrow">카테고리 마케팅</div>
+<h2>26FW <em>CATEGORY MARKETING</em></h2>
+<p class="lead">25FW의 <b>경량 패딩 라인업</b>을 26FW에 확대·개선하여 히어로 아이템 경쟁력을 확보.<br/>경량 패딩부터 구스 다운까지 트렌드 라인업을 갖추고, 선제적으로 패딩 마케팅에 관여해 FW 시즌 이슈를 선점한다.</p>
+<div class="hero-grid" style="grid-template-columns:repeat(3,1fr);">
+<div class="hero-card"><div class="hc-label">Agenda 01</div><div class="hc-value">패딩 라인업 확대</div><div class="hc-note">경량 패딩부터 구스 다운까지 트렌드 라인업 확보</div></div>
+<div class="hero-card"><div class="hc-label">Agenda 02</div><div class="hc-value">FW 시즌 이슈 선점</div><div class="hc-note">경량 패딩 조기 커뮤니케이션으로 시즌 이슈 선점</div></div>
+<div class="hero-card"><div class="hc-label">Agenda 03</div><div class="hc-value">키 스타일링</div><div class="hc-note">힙 스포티브·힙 스트릿 라이프스타일 확장</div></div>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd"><span class="sec-num">01</span><span class="sec-title">25FW SEASON LEARNING POINT</span><span class="sec-sub">What we learned</span></div>
+<div class="learn-split">
+<div class="learn-area">
+<div class="area-band"><span class="ab-no">A</span><span class="ab-title">상품 경쟁력</span><span class="ab-sub">Product Competitiveness</span></div>
+<div class="area-body two">
+<div class="learn-card flat">
+<div class="lc-visual"><span class="lc-num">ISSUE 01</span><img alt="25FW 경량 패딩 스타일" src="assets/tab3/learning1_padding_styles.jpg"/></div>
+<div class="lc-body">
+<h4>1. 경량 패딩 스타일 수 부족</h4>
+<ul>
+<li>주력으로 밀 <b>경량 패딩 스타일 라인업 부족</b></li>
+<li>상위 경량 패딩 대비 두께·경량감 등 <b>기능성 열위</b>, 컬러·소재 트렌드 반영도 미흡</li>
+</ul>
+</div>
+</div>
+<div class="learn-card flat">
+<div class="lc-visual"><span class="lc-num">ISSUE 02</span><img alt="25FW 상품 경쟁력 부재" src="assets/tab3/learning2_trend_absence_v2.jpg"/></div>
+<div class="lc-body">
+<h4>2. 상품 경쟁력 부재</h4>
+<ul>
+<li>숏 다운·구스 다운 등 <b>시장 트렌드 미반영 디자인</b>으로 제품 자체 매력도 저하</li>
+<li><b>커브 패딩에 편중</b>, 주력으로 받칠 스타일 다양성 부족</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="learn-area">
+<div class="area-band"><span class="ab-no">B</span><span class="ab-title">FW 시즌 이슈 선점</span><span class="ab-sub">Communication Timing</span></div>
+<div class="area-body comm-stack">
+<div class="cal-card">
+<div class="cal-wrap"><img alt="25FW OUTER MAIN ITEM 월별 캘린더 (SEP–JAN)" src="assets/tab3/learning3_comm_timing.jpg"/></div>
+<div class="cal-cap">[ 참고 : 25FW OUTER MAIN ITEM ]</div>
+</div>
+<div class="comm-text">
+<h4>경량 패딩 라인업 부족에 따른 커뮤니케이션 시점 차이</h4>
+<ul>
+<li><b>경량 패딩 스타일 수 부족</b>으로 초가을 주력으로 밀 아이템이 제한적이었던 상황</li>
+<li>이에 <b>숏 다운 중심</b>으로 마케팅을 전개하며 10–11월부터 다운 커뮤니케이션 시작</li>
+<li>반면 경쟁 브랜드는 <b>경량 패딩 위주</b>로 9–10월부터 마케팅 전개 → 시즌 초 이슈를 선점</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="learn-summary">
+<div class="ls-label">Learning Point</div>
+<ul>
+<li>초가을 주력으로 밀 <b>경량 패딩 라인업이 부족</b>해, 자연히 패딩 커뮤니케이션 시점이 경쟁사보다 늦어짐</li>
+<li>26FW는 <b>경량 패딩 라인업을 선제적으로 확대</b>하고 마케팅이 조기에 관여해, FW 시즌 이슈를 선점할 기반 확보</li>
+</ul>
+</div>
+</div>
+<div class="sec">
+<div class="sec-hd"><span class="sec-num">02</span><span class="sec-title">26FW CATEGORY MARKETING</span><span class="sec-sub">How we win back</span></div>
+<div class="action-dir">
+<div class="action-card">
+<div class="ac-no">ACTION 01</div>
+<h4>패딩 라인업 확대 + 히어로 아이템 개선</h4>
+<p>경량 패딩부터 숏 다운·구스 다운까지 <b>패딩 라인업을 확대</b>하고, 마케팅팀이 선제적으로 관여해 트렌드를 반영함으로써 <b>‘패딩’ 히어로 아이템 경쟁력을 개선</b>. 나아가 가볍고 활동성 있는 기능성을 단순 스펙이 아닌 <b>힙 스포티브 라이프스타일</b>에 녹여, 일상 속 무드로 자연스럽게 연결하는 스토리텔링으로 전개.</p>
+</div>
+<div class="action-card">
+<div class="ac-no">ACTION 02</div>
+<h4>패딩 마케팅 이슈 선점</h4>
+<p>경량 패딩 라인업 확대를 바탕으로 <b>패딩 커뮤니케이션 시점을 앞당겨</b> FW 시즌 이슈를 선제적으로 선점. 25FW 대비 매기 대응 시점을 확보.</p>
+</div>
+<div class="action-card">
+<div class="ac-no">ACTION 03</div>
+<h4>키 스타일링 통한 라이프스타일 확장</h4>
+<p>패딩+미야옹 비니 히어로로 스타일링 자산 축적 → <b>MLB만의 힙 스포티브·힙 스트릿 라이프스타일</b> 확장.</p>
+</div>
+</div>
+<div class="season-row">
+<div class="season-card">
+<div class="sc-head"><span class="sc-season">Fall</span><span class="sc-month">8 – 9월</span><span class="sc-items"><span>경량 패딩</span><span class="sub">볼캡</span><span class="sub">슬릭</span></span></div>
+<div class="sc-styling"><img alt="FALL 키 스타일링" src="assets/tab3/fall_styling_v2.jpg"/></div>
+<div class="sc-product"><img alt="FALL 제품 라인업" src="assets/tab3/fall_product.jpg"/></div>
+<div class="sc-note"><b>경량 패딩</b> 중심 다양한 컬러·스타일 라인업으로 시즌 초 트렌드 선점.</div>
+</div>
+<div class="season-card">
+<div class="sc-head"><span class="sc-season">Winter</span><span class="sc-month">10 – 11월</span><span class="sc-items"><span>스탠다드 숏패딩</span><span class="sub">미야옹 비니</span></span></div>
+<div class="sc-styling"><img alt="WINTER 스탠다드 숏패딩 스타일링" src="assets/tab3/winter1_styling.jpg"/></div>
+<div class="sc-product"><img alt="WINTER 숏패딩 제품 라인업" src="assets/tab3/winter1_product.jpg"/></div>
+<div class="sc-note"><b>스탠다드 숏패딩 + 미야옹 비니</b> 히어로 조합으로 키 스타일링 각인.</div>
+</div>
+<div class="season-card">
+<div class="sc-head"><span class="sc-season">Winter</span><span class="sc-month">11 – 12월</span><span class="sc-items"><span>구스 다운</span><span class="sub">방한화</span></span></div>
+<div class="sc-styling"><img alt="WINTER 구스 다운 스타일링" src="assets/tab3/winter2_styling.jpg"/></div>
+<div class="sc-product"><img alt="WINTER 구스 다운 제품 라인업" src="assets/tab3/winter2_product.jpg"/></div>
+<div class="sc-note"><b>구스 다운 + 방한화</b>로 보온 카테고리까지 확장, 시즌 막판 매출 견인.</div>
+</div>
+</div>
+</div>
+<div class="takeaway">
+<div class="label">Tab 3 Key Takeaway · 카테고리 마케팅</div>
+<h3>25FW의 학습을 26FW 액션으로 — 패딩 라인업 확대·히어로 아이템 개선·이슈 선점·스타일링 4박자로 카테고리를 리딩한다</h3>
+<p>경량 패딩 라인업 확대와 히어로 아이템 개선, 선제적 관여를 통한 패딩 마케팅 이슈 선점, 패딩+미야옹 비니 키 스타일링을 통해 MLB만의 힙 스포티브·힙 스트릿 라이프스타일로 FW 핵심 카테고리를 단계적으로 확장.</p>
+</div>
+</section><section class="tab" id="tab4">
+<div class="hero">
+<div class="ai-badge"><span class="blink"></span>MLB · AI TREND ANALYSIS — 26FW HIP LIFESTYLE</div>
+<div class="eyebrow">26FW 무드보드</div>
+<h2>26FW 무드보드 <em>with KARINA</em></h2>
+<p class="lead">HIP한 시티 라이프스타일 기반의 26FW 트렌드 <em>AI 분석</em> — 카리나(KARINA) 앰버서더 무드보드 &amp; 시즌 촬영 컨셉에 반영</p>
+<div class="hero-grid">
+<div class="hero-card"><div class="hc-label">KEYWORD 01</div><div class="hc-value">K-POP</div><div class="hc-note">카리나 중심 K-POP 라이프스타일 무드</div></div>
+<div class="hero-card"><div class="hc-label">KEYWORD 02</div><div class="hc-value">힙스포티브</div><div class="hc-note">스포티브 힙 스타일링 코드</div></div>
+<div class="hero-card"><div class="hc-label">KEYWORD 03</div><div class="hc-value">힙스트릿</div><div class="hc-note">서울 스트릿 기반 힙 무드</div></div>
+<div class="hero-card"><div class="hc-label">KEYWORD 04</div><div class="hc-value">WINTER OUTER</div><div class="hc-note">26FW 주력 아우터 카테고리</div></div>
+</div>
+</div>
+<div class="tab4-mood-stack">
+<section class="tab4-mood-block fall">
+<div class="sec-hd tab4-sec-hd"><span class="sec-num">01</span>
+<div><div class="sec-title">Fall Moodboard</div><div class="tab4-block-sub">Street &amp; Baseball Lifestyle</div></div>
+<span class="sec-sub">FALL · 10 CUTS</span></div>
+<div class="tab4-image-grid grid-10"><figure class="tab4-img-card"><img alt="F 01" loading="lazy" src="assets/embedded/emb_01.jpg"/><figcaption>F-01</figcaption></figure><figure class="tab4-img-card"><img alt="F 02" loading="lazy" src="assets/embedded/emb_02.jpg"/><figcaption>F-02</figcaption></figure><figure class="tab4-img-card"><img alt="F 03" loading="lazy" src="assets/embedded/emb_03.jpg"/><figcaption>F-03</figcaption></figure><figure class="tab4-img-card"><img alt="F 04" loading="lazy" src="assets/embedded/emb_04.jpg"/><figcaption>F-04</figcaption></figure><figure class="tab4-img-card"><img alt="F 05" loading="lazy" src="assets/embedded/emb_05.jpg"/><figcaption>F-05</figcaption></figure><figure class="tab4-img-card"><img alt="F 06" loading="lazy" src="assets/embedded/emb_06.jpg"/><figcaption>F-06</figcaption></figure><figure class="tab4-img-card"><img alt="F 07" loading="lazy" src="assets/embedded/emb_07.jpg"/><figcaption>F-07</figcaption></figure><figure class="tab4-img-card"><img alt="F 08" loading="lazy" src="assets/embedded/emb_08.jpg"/><figcaption>F-08</figcaption></figure><figure class="tab4-img-card"><img alt="F 09" loading="lazy" src="assets/embedded/emb_09.jpg"/><figcaption>F-09</figcaption></figure><figure class="tab4-img-card"><img alt="F 10" loading="lazy" src="assets/embedded/emb_10.jpg"/><figcaption>F-10</figcaption></figure></div>
+</section>
+<section class="tab4-mood-block winter">
+<div class="sec-hd tab4-sec-hd"><span class="sec-num">02</span>
+<div><div class="sec-title">Winter Moodboard</div><div class="tab4-block-sub">패딩을 서울 스트릿에서 가장 힙하게</div></div>
+<span class="sec-sub">WINTER · 10 CUTS</span></div>
+<div class="tab4-image-grid grid-10"><figure class="tab4-img-card"><img alt="W 01" loading="lazy" src="assets/embedded/emb_11.jpg"/><figcaption>W-01</figcaption></figure><figure class="tab4-img-card"><img alt="W 02" loading="lazy" src="assets/embedded/emb_12.jpg"/><figcaption>W-02</figcaption></figure><figure class="tab4-img-card"><img alt="W 03" loading="lazy" src="assets/embedded/emb_13.jpg"/><figcaption>W-03</figcaption></figure><figure class="tab4-img-card"><img alt="W 04" loading="lazy" src="assets/embedded/emb_14.jpg"/><figcaption>W-04</figcaption></figure><figure class="tab4-img-card"><img alt="W 05" loading="lazy" src="assets/embedded/emb_15.jpg"/><figcaption>W-05</figcaption></figure><figure class="tab4-img-card"><img alt="W 06" loading="lazy" src="assets/embedded/emb_16.jpg"/><figcaption>W-06</figcaption></figure><figure class="tab4-img-card"><img alt="W 07" loading="lazy" src="assets/embedded/emb_17.jpg"/><figcaption>W-07</figcaption></figure><figure class="tab4-img-card"><img alt="W 08" loading="lazy" src="assets/embedded/emb_18.jpg"/><figcaption>W-08</figcaption></figure><figure class="tab4-img-card"><img alt="W 09" loading="lazy" src="assets/embedded/emb_19.jpg"/><figcaption>W-09</figcaption></figure><figure class="tab4-img-card"><img alt="W 10" loading="lazy" src="assets/embedded/emb_20.jpg"/><figcaption>W-10</figcaption></figure></div>
+</section>
+<section class="tab4-mood-block karina-block">
+<div class="sec-hd tab4-sec-hd"><span class="sec-num">03</span>
+<div><div class="sec-title">26FW KARINA × MLB</div><div class="tab4-block-sub">Ambassador Contents · KARINA (aespa)</div></div>
+<span class="sec-sub">KARINA · 12 CUTS</span></div>
+<div class="fall tab4-karina-sub">
+<div class="tab4-copy-layout">
+<div class="tab4-copy-panel">
+<span class="tab4-mini-tag fall">FALL</span>
+<h3>K-POP IN MOTION with KARINA</h3>
+<p class="tab4-desc">스포티브 힙 무드 &amp; K-POP 스타일링이 결합된 카리나의 가을 비주얼</p>
+<div class="tab4-copy-block"><p class="tab4-label">장소 · 공간</p>
+<div class="tab4-chips place"><span>Outdoor Stage</span><span>Open Ground</span><span>Performance Venue</span><span>Concrete Floor</span></div></div>
+<div class="tab4-copy-block"><p class="tab4-label">무드 · 태도</p>
+<div class="tab4-chips mood"><span>K-pop Performance</span><span>Sportive Hip</span><span>Stage Energy</span><span>Trend Forward</span></div></div>
+<div class="tab4-key"><p>K-pop 퍼포먼스 무드와 스포티브 힙 스타일을 결합한 가을 비주얼. 케이팝 스타의 트렌디한 에너지와 자유로운 스트릿 감성을 하나의 스타일로 완성.</p></div>
+<div class="tab4-direction"><div class="tab4-direction-title">Direction</div>
+<ol><li>K-pop 퍼포먼스를 기반으로 Sportive Hip 스타일 구현</li><li>퍼포먼스 무드와 스포티브 스타일을 결합한 새로운 K-pop 비주얼 제안</li><li>K-pop 아이콘 카리나만의 Sportive Hip 아이덴티티 강조</li></ol></div>
+</div>
+<div class="tab4-copy-images"><div class="tab4-image-grid grid-6"><figure class="tab4-img-card"><img alt="KF 01" loading="lazy" src="assets/tab4/kpop_motion_karina_01.jpg"/><figcaption>KF-01</figcaption></figure><figure class="tab4-img-card"><img alt="KF 02" loading="lazy" src="assets/tab4/kpop_motion_karina_02.jpg"/><figcaption>KF-02</figcaption></figure><figure class="tab4-img-card"><img alt="KF 03" loading="lazy" src="assets/tab4/kpop_motion_karina_03.jpg"/><figcaption>KF-03</figcaption></figure><figure class="tab4-img-card"><img alt="KF 04" loading="lazy" src="assets/tab4/kpop_motion_karina_04.jpg"/><figcaption>KF-04</figcaption></figure><figure class="tab4-img-card"><img alt="KF 05" loading="lazy" src="assets/tab4/kpop_motion_karina_05.jpg"/><figcaption>KF-05</figcaption></figure><figure class="tab4-img-card"><img alt="KF 06" loading="lazy" src="assets/tab4/kpop_motion_karina_06.jpg"/><figcaption>KF-06</figcaption></figure></div></div>
+</div>
+</div>
+<div class="tab4-karina-divider"></div>
+<div class="winter tab4-karina-sub">
+<div class="tab4-copy-layout">
+<div class="tab4-copy-panel">
+<span class="tab4-mini-tag winter">WINTER</span>
+<h3>WINTER RHYTHM with KARINA</h3>
+<p class="tab4-desc">K-pop 스타일링을 중심으로 힙 스트릿 무드를 더해 완성한 카리나의 겨울 비주얼.</p>
+<div class="tab4-copy-block"><p class="tab4-label">장소 · 공간</p>
+<div class="tab4-chips place"><span>K-pop Street</span><span>Urban City</span><span>Winter Skyline</span><span>City Backdrop</span></div></div>
+<div class="tab4-copy-block"><p class="tab4-label">무드 · 태도</p>
+<div class="tab4-chips mood"><span>K-pop Core</span><span>Stage Presence</span><span>Hip Street</span><span>Performance Energy</span><span>Trend Leader</span></div></div>
+<div class="tab4-key"><p>K-pop 아이콘 카리나의 스타일링을 중심으로 힙 스트릿 감성을 더한 비주얼. 퍼포먼스에서 이어진 스타일과 스트릿 무드가 만난 트렌디한 겨울 비주얼.</p></div>
+<div class="tab4-direction"><div class="tab4-direction-title">Direction</div>
+<ol><li>K-pop 스타일링을 중심으로 힙 스트릿 무드를 결합한 비주얼 연출</li><li>바디라인이 드러나는 이너와 패딩 볼륨과 실루엣의 대비 강조</li><li>아이돌 특유의 완성도 높은 스타일링과 스트릿 실루엣을 믹스해 새로운 겨울 스타일 제안</li></ol></div>
+</div>
+<div class="tab4-copy-images"><div class="tab4-image-grid grid-6"><figure class="tab4-img-card"><img alt="KW 01" loading="lazy" src="assets/embedded/emb_21.jpg"/><figcaption>KW-01</figcaption></figure><figure class="tab4-img-card"><img alt="KW 02" loading="lazy" src="assets/embedded/emb_22.jpg"/><figcaption>KW-02</figcaption></figure><figure class="tab4-img-card"><img alt="KW 03" loading="lazy" src="assets/embedded/emb_23.jpg"/><figcaption>KW-03</figcaption></figure><figure class="tab4-img-card"><img alt="KW 04" loading="lazy" src="assets/embedded/emb_24.jpg"/><figcaption>KW-04</figcaption></figure><figure class="tab4-img-card"><img alt="KW 05" loading="lazy" src="assets/embedded/emb_25.jpg"/><figcaption>KW-05</figcaption></figure><figure class="tab4-img-card"><img alt="KW 06" loading="lazy" src="assets/embedded/emb_26.jpg"/><figcaption>KW-06</figcaption></figure></div></div>
+</div>
+</div>
+</section>
+</div>
+<div class="takeaway"><div class="label">TAB 4 KEY TAKEAWAY</div><h3>힙한 K-POP 스타일을 기반으로, 주력 아이템을 카리나를 통해 완성하는 26FW MLB Hip Lifestyle</h3><p>Fall·Winter 무드보드로 시즌 비주얼 코드를 정의하고, 카리나 앰버서더 콘텐츠(K-POP IN MOTION · WINTER RHYTHM)로 스포티브 힙 무드와 K-POP 스타일링을 시즌 촬영 컨셉에 반영.</p></div>
+</section></main>
+</div>
+<script>
+const buttons=[...document.querySelectorAll('.tabbtn')];
+const tabs=[...document.querySelectorAll('.tab')];
+buttons.forEach(btn=>btn.addEventListener('click',()=>{
+  const id=btn.dataset.tab;
+  buttons.forEach(b=>b.classList.remove('active'));
+  tabs.forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}));
+</script>
+<script>
+function resizeKarinaFrame(){
+  const f=document.querySelector('.karina-content-frame');
+  if(!f) return;
+  try{
+    const doc=f.contentDocument||f.contentWindow.document;
+    const h=Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if(h>0) f.style.height=(h+40)+'px';
+  }catch(e){}
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const f=document.querySelector('.karina-content-frame');
+  if(f){
+    f.addEventListener('load',()=>{resizeKarinaFrame(); setTimeout(resizeKarinaFrame,500); setTimeout(resizeKarinaFrame,1500);});
+  }
+  document.querySelectorAll('.tabbtn').forEach(btn=>btn.addEventListener('click',()=>setTimeout(resizeKarinaFrame,80)));
+});
+window.addEventListener('resize',()=>setTimeout(resizeKarinaFrame,120));
+</script><script>
+function resizeTab2Frame(){
+  const f=document.querySelector('.tab2-content-frame');
+  if(!f) return;
+  try{
+    const doc=f.contentDocument||f.contentWindow.document;
+    const h=Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if(h>0) f.style.height=(h+40)+'px';
+  }catch(e){}
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  const f=document.querySelector('.tab2-content-frame');
+  if(f){f.addEventListener('load',()=>{resizeTab2Frame(); setTimeout(resizeTab2Frame,500); setTimeout(resizeTab2Frame,1500);});}
+  document.querySelectorAll('.tabbtn').forEach(btn=>btn.addEventListener('click',()=>setTimeout(resizeTab2Frame,100)));
+});
+window.addEventListener('resize',()=>setTimeout(resizeTab2Frame,120));
+</script></body>
+</html>
